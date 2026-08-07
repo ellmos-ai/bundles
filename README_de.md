@@ -136,6 +136,34 @@ Zwei Eigenschaften machen das Ergebnis prüfbar statt bloß behauptet:
 python tools/export_from_source.py --source <pfad-zur-quelle> --check
 ```
 
+## Banner & Seiten
+
+**Status: Pilot.** Ein Bundle — `ellmos-daily-life-bundle` — hat einen Banner und eine Seite,
+als Designprobe. Palette, Szene und Seitenaufbau gehen erst zur Abnahme, bevor die übrigen
+folgen; was heute existiert, ist also mit Absicht eins von dreizehn und nicht dreizehn von
+dreizehn.
+
+Die Bildsprache kommt aus dem Wasser-Lexikon des Ökosystems: Jede der vier Säulen ist ein
+Gewässer mit eigenem Licht und eigenem Symbol — der Hafen für `uas`, wo verschiedene Netze
+verschiedenen Fisch fangen. `assets/design/README.md` hält die Regeln der Serie fest;
+`assets/design/tokens.json` ist der eine Ort, an dem eine Farbe entschieden wird.
+
+| | |
+|---|---|
+| Banner | [`assets/banners/ellmos-daily-life-bundle.svg`](assets/banners/ellmos-daily-life-bundle.svg) |
+| Seite | [`docs/bundles/ellmos-daily-life-bundle.md`](docs/bundles/ellmos-daily-life-bundle.md) |
+| Lokale Vorschau | [`docs/preview/ellmos-daily-life-bundle.html`](docs/preview/ellmos-daily-life-bundle.html) |
+
+```bash
+python tools/generate_banner.py ellmos-daily-life-bundle          # Titel und Säule aus dem Manifest
+python tools/generate_banner.py ellmos-daily-life-bundle --check  # Drift melden statt schreiben
+```
+
+Banner werden hier gezeichnet statt aus der Quelle projiziert — und sind auf dieselbe Weise
+reproduzierbar wie die Manifeste: keine Zeitstempel, keine zufällige Platzierung, zweimal
+ausgeführt erzeugt der zweite Lauf keinen Unterschied. Jeder Banner ist in sich geschlossenes
+SVG: keine externen Schriften, keine Rastergrafiken, keine Netzverweise.
+
 ## Lizenz
 
 Noch nicht entschieden. Sie ist Teil der Publikationsprüfung und wird vor der ersten Welle

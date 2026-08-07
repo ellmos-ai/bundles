@@ -132,6 +132,33 @@ Two properties make the result checkable rather than merely asserted:
 python tools/export_from_source.py --source <path-to-source> --check
 ```
 
+## Banners and pages
+
+**Status: pilot.** One bundle — `ellmos-daily-life-bundle` — has a banner and a page, as a
+design sample. Palette, scene and page layout go to review before the rest follow, so what
+exists today is deliberately one of thirteen and not thirteen of thirteen.
+
+The visual language comes from the ecosystem's water lexicon: each of the four pillars is a
+body of water with its own light and its own symbol — the harbour for `uas`, where different
+nets catch different fish. `assets/design/README.md` carries the rules the series keeps;
+`assets/design/tokens.json` is the single place a colour is decided.
+
+| | |
+|---|---|
+| Banner | [`assets/banners/ellmos-daily-life-bundle.svg`](assets/banners/ellmos-daily-life-bundle.svg) |
+| Page (German) | [`docs/bundles/ellmos-daily-life-bundle.md`](docs/bundles/ellmos-daily-life-bundle.md) |
+| Local preview | [`docs/preview/ellmos-daily-life-bundle.html`](docs/preview/ellmos-daily-life-bundle.html) |
+
+```bash
+python tools/generate_banner.py ellmos-daily-life-bundle          # title and pillar from the manifest
+python tools/generate_banner.py ellmos-daily-life-bundle --check  # drift instead of writing
+```
+
+Banners are drawn here rather than projected from the source, and they are reproducible the
+same way the manifests are: no timestamps, no random placement, run twice and the second run
+produces no diff. Every banner is self-contained SVG — no external fonts, no raster images,
+no network references.
+
 ## Licence
 
 Not yet settled. It is part of the publication check and will be fixed before the first wave.
