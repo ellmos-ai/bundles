@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="{{WIDTH}}" height="{{HEIGHT}}" viewBox="0 0 {{WIDTH}} {{HEIGHT}}" role="img" aria-label="{{ARIA}}">
+  <title>{{ARIA}}</title>
+  <defs>
+    <!-- Sky and water meet at the waterline in the same colour, so the horizon is
+         drawn by the hairline below and never by a seam between two rectangles. -->
+    <linearGradient id="bnr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="{{C_DEEP}}"/>
+      <stop offset="1" stop-color="{{C_MID}}"/>
+    </linearGradient>
+    <linearGradient id="bnr-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="{{C_MID}}"/>
+      <stop offset="1" stop-color="{{C_ABYSS}}"/>
+    </linearGradient>
+    <radialGradient id="bnr-lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="{{C_ACCENT}}" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="{{C_ACCENT}}" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="{{C_ACCENT}}" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bnr-veil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{{C_ABYSS}}" stop-opacity="0.97"/>
+      <stop offset="0.55" stop-color="{{C_ABYSS}}" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="{{C_ABYSS}}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="{{WIDTH}}" height="{{WATERLINE}}" fill="url(#bnr-sky)"/>
+  <rect y="{{WATERLINE}}" width="{{WIDTH}}" height="{{WATER_HEIGHT}}" fill="url(#bnr-water)"/>
+  <rect x="{{HORIZON_X}}" y="{{WATERLINE}}" width="{{HORIZON_W}}" height="1" fill="{{C_SURFACE}}" opacity="0.5"/>
+
+{{SCENE}}
+
+  <rect width="{{VEIL_WIDTH}}" height="{{HEIGHT}}" fill="url(#bnr-veil)"/>
+
+  <g transform="translate({{MARGIN_LEFT}} 0)">
+    <rect x="0" y="88" width="{{CHIP_WIDTH}}" height="26" rx="13" fill="none" stroke="{{C_ACCENT}}" stroke-opacity="0.5"/>
+    <text x="15" y="105.5" font-family="{{FONT_SANS}}" font-size="{{CHIP_SIZE}}" letter-spacing="{{CHIP_TRACKING}}" fill="{{C_ACCENT}}" fill-opacity="0.92">{{PILLAR_CHIP}}</text>
+    <text x="-2" y="171" font-family="{{FONT_SANS}}" font-size="{{TITLE_SIZE}}" font-weight="600" letter-spacing="-0.6" fill="{{C_INK}}">{{TITLE}}</text>
+    <text x="0" y="201" font-family="{{FONT_MONO}}" font-size="{{SUBTITLE_SIZE}}" letter-spacing="0.5" fill="{{C_MUTED}}">{{SUBTITLE}}</text>
+  </g>
+
+  <rect y="{{RULE_Y}}" width="{{WIDTH}}" height="{{RULE_HEIGHT}}" fill="{{C_ACCENT}}" opacity="0.85"/>
+</svg>
