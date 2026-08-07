@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Media Production Bundle — Frachtwasser (domain pillar)">
+  <title>Media Production Bundle — Frachtwasser (domain pillar)</title>
+  <defs>
+    <!-- Sky and water meet at the waterline in the same colour, so the horizon is
+         drawn by the hairline below and never by a seam between two rectangles. -->
+    <linearGradient id="bnr-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14303f"/>
+      <stop offset="1" stop-color="#24505f"/>
+    </linearGradient>
+    <linearGradient id="bnr-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24505f"/>
+      <stop offset="1" stop-color="#0a1a24"/>
+    </linearGradient>
+    <radialGradient id="bnr-lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d98247" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#d98247" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#d98247" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bnr-veil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a1a24" stop-opacity="0.97"/>
+      <stop offset="0.55" stop-color="#0a1a24" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#0a1a24" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="208" fill="url(#bnr-sky)"/>
+  <rect y="208" width="1200" height="92" fill="url(#bnr-water)"/>
+  <rect x="520" y="208" width="680" height="1" fill="#46788a" opacity="0.5"/>
+
+  <g id="scene-freight">
+    <g fill="#050f16" opacity="0.9">
+      <rect x="988" y="176" width="212" height="18"/>
+      <rect x="1008" y="194" width="9" height="64"/>
+      <rect x="1068" y="194" width="9" height="64"/>
+      <rect x="1128" y="194" width="9" height="64"/>
+      <rect x="1188" y="194" width="9" height="64"/>
+    </g>
+    <rect x="988" y="176" width="212" height="1" fill="#46788a" opacity="0.3"/>
+    <g>
+      <rect x="1052" y="161" width="32" height="15" fill="#050f16" opacity="0.9"/><rect x="1052" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1087" y="161" width="32" height="15" fill="#050f16" opacity="0.9"/><rect x="1087" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1122" y="161" width="32" height="15" fill="#050f16" opacity="0.9"/><rect x="1122" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1157" y="161" width="32" height="15" fill="#050f16" opacity="0.9"/><rect x="1157" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1052" y="145" width="32" height="15" fill="#050f16" opacity="0.87"/><rect x="1052" y="145" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1087" y="145" width="32" height="15" fill="#050f16" opacity="0.87"/><rect x="1087" y="145" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1122" y="145" width="32" height="15" fill="#050f16" opacity="0.87"/><rect x="1122" y="145" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1052" y="129" width="32" height="15" fill="#050f16" opacity="0.8400000000000001"/><rect x="1052" y="129" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1087" y="129" width="32" height="15" fill="#050f16" opacity="0.8400000000000001"/><rect x="1087" y="129" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="996" y="161" width="32" height="15" fill="#050f16" opacity="0.88"/><rect x="996" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="1031" y="161" width="32" height="15" fill="#050f16" opacity="0.88"/><rect x="1031" y="161" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="996" y="145" width="32" height="15" fill="#050f16" opacity="0.85"/><rect x="996" y="145" width="32" height="1" fill="#46788a" opacity="0.16"/>
+    </g>
+    <g fill="#050f16" opacity="0.9">
+      <rect x="1030" y="58" width="10" height="120"/>
+      <rect x="1160" y="58" width="10" height="120"/>
+      <rect x="878" y="54" width="322" height="9"/>
+      <rect x="1092" y="24" width="8" height="32"/>
+    </g>
+    <g stroke="#050f16" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 1096 27 L 882 55" stroke-width="2.2"/>
+      <path d="M 1096 27 L 1196 55" stroke-width="2.2"/>
+      <path d="M 1035 63 L 1165 63" stroke-width="1.6" stroke-opacity="0.5"/>
+    </g>
+    <g fill="#050f16" opacity="0.9">
+      <rect x="922" y="63" width="28" height="12" rx="2"/>
+      <rect x="934" y="75" width="3" height="46"/>
+      <rect x="922" y="119" width="28" height="6" rx="2"/>
+    </g>
+    <rect x="904" y="127" width="64" height="27" rx="1.5" fill="#d98247" opacity="0.95"/>
+    <g stroke="#0a1a24" stroke-opacity="0.32" stroke-width="1.4">
+      <path d="M 920 130 L 920 151"/>
+      <path d="M 936 130 L 936 151"/>
+      <path d="M 952 130 L 952 151"/>
+    </g>
+    <path d="M 686 194 L 986 194 L 972 213 L 702 213 Z" fill="#050f16" opacity="0.92"/>
+    <g>
+      <rect x="700" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="700" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="734" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="734" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="768" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="768" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="802" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="802" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="836" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="836" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="870" y="179" width="32" height="15" fill="#050f16" opacity="0.86"/><rect x="870" y="179" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="700" y="163" width="32" height="15" fill="#050f16" opacity="0.82"/><rect x="700" y="163" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="734" y="163" width="32" height="15" fill="#050f16" opacity="0.82"/><rect x="734" y="163" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="768" y="163" width="32" height="15" fill="#050f16" opacity="0.82"/><rect x="768" y="163" width="32" height="1" fill="#46788a" opacity="0.16"/>
+      <rect x="802" y="163" width="32" height="15" fill="#050f16" opacity="0.82"/><rect x="802" y="163" width="32" height="1" fill="#46788a" opacity="0.16"/>
+    </g>
+    <g stroke="#46788a" stroke-linecap="round" stroke-opacity="0.16">
+      <path d="M 716 224 h 66" stroke-width="1.4"/>
+      <path d="M 860 232 h 44" stroke-width="1.4"/>
+      <path d="M 1042 220 h 38" stroke-width="1.4"/>
+      <path d="M 760 262 h 52" stroke-width="1.4"/>
+      <path d="M 996 250 h 34" stroke-width="1.4"/>
+      <path d="M 1120 276 h 46" stroke-width="1.4"/>
+      <path d="M 652 240 h 28" stroke-width="1.4"/>
+    </g>
+    <g stroke="#d98247" stroke-linecap="round">
+      <path d="M 908 219 h 56" stroke-width="2" stroke-opacity="0.17"/>
+      <path d="M 916 231 h 40" stroke-width="2" stroke-opacity="0.1"/>
+    </g>
+    <rect y="208" width="1200" height="92" fill="#0a1a24" opacity="0.22"/>
+  </g>
+
+  <rect width="760" height="300" fill="url(#bnr-veil)"/>
+
+  <g transform="translate(72 0)">
+    <rect x="0" y="88" width="216.5" height="26" rx="13" fill="none" stroke="#d98247" stroke-opacity="0.5"/>
+    <text x="15" y="105.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="11" letter-spacing="1.7" fill="#d98247" fill-opacity="0.92">DOMAIN · FRACHTWASSER</text>
+    <text x="-2" y="171" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="41" font-weight="600" letter-spacing="-0.6" fill="#eef2f4">Media Production Bundle</text>
+    <text x="0" y="201" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="0.5" fill="#92a8b3">ellmos-media-production-bundle</text>
+  </g>
+
+  <rect y="297" width="1200" height="3" fill="#d98247" opacity="0.85"/>
+</svg>
