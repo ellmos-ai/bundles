@@ -1,0 +1,18 @@
+# PRIVATE.txt and PUBLIC.txt are deliberately NOT ignored [U 2026-08-08]:
+# the publication gate belongs at the remote, where visibility is switched.
+# Only folders without a repository keep purely local markers.
+
+# Local locks
+LOCK.txt
+LOCK.*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

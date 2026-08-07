@@ -1,0 +1,65 @@
+GATE: conditional
+SCOPE: not-yet-public
+CREATED: 2026-08-08T01:05 Europe/Berlin
+CREATED_BY: claude-code (OP-PUBFIX), on the user's instruction of 2026-08-08
+
+NOTE: no host name is recorded here. Since 2026-08-08 this marker is committed
+rather than kept local, so it travels to the remote - and a host name in a file
+that ships is instance data, the very thing the export rules strip elsewhere.
+
+WHAT THIS REPOSITORY IS
+-----------------------
+The recipe layer: bundle manifests, the catalogue excerpt, and the export tool
+that projects them out of the private composition source. This is the wave
+carrier - recipes go public here wave by wave, not all at once.
+
+WHY THIS FILE EXISTS
+--------------------
+Until a wave is released, every form of publication is barred: GitHub
+visibility public, public forks or mirrors, registry and marketplace entries,
+package publishes, public websites carrying this content.
+
+Editing the repository is explicitly allowed. This is a publication lock, not
+a work lock.
+
+RELEASE CONDITIONS (all three must be demonstrably met, per wave)
+------------------------------------------------------------------
+1. BRANDING PACKAGE COMPLETE
+   The ellmos-ai presentation for the bundle layer exists: repository cut,
+   banner and branding line, how the bundles appear on the organisation
+   profile. Publishing recipes without it would spend the first impression on
+   an unfinished shopfront.
+
+2. /repo-publish-check PASSED
+   The publication gate skill has been run over the wave being released - law,
+   privacy, licence - and reports no blockers. The licence question is open at
+   creation time and is settled before the first wave.
+
+3. USER CLICK FOR THIS WAVE
+   Each wave is released on an explicit decision by the user. Waves are not
+   released because the previous one went well.
+
+Condition 3 is per wave and does not carry over: a released wave says nothing
+about the next one.
+
+WHO MAY LIFT THIS GATE
+----------------------
+This file carries explicit release conditions, so under LOCK-SYSTEM.md an
+agent may delete it once ALL THREE are demonstrably met - with a documented
+record of which condition was met how. Condition 3 is a user decision by
+definition, so in practice the user is always involved.
+
+What an agent must never do: change the repository visibility because the work
+looks finished. Visibility is changed by the user (VISIBILITY-POLICY.md,
+closing line).
+
+RELATED
+-------
+The system build lives in a separate repository (open-ocean) and carries its
+own, stricter gate. Recipes ship months before the full system; keeping them
+apart is what stops one from promising the other.
+
+HISTORY
+-------
+2026-08-08  created with the repository, before the first content commit, so it
+            never existed for a moment without its gate. [C]
