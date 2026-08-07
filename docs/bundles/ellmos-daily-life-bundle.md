@@ -93,5 +93,6 @@ projiziert (`tools/export_from_source.py`). Der Banner dagegen entsteht in diese
 
 ---
 
-*Diese Seite ist der Pilot der Banner- und Seitenserie. Layout, Palette und Bildsprache
-stehen zur Abnahme; die übrigen Bundles folgen nach dem Design-Feedback.*
+*Diese Seite war der Pilot der Banner- und Seitenserie. Layout, Palette und Bildsprache wurden
+am 2026-08-08 abgenommen und sind seitdem eingefroren; die übrigen zwölf Bundles sind danach
+gefolgt — [Übersicht über alle 13](README.md).*

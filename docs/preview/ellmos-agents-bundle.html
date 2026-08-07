@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agents Bundle — Bundle-Seite</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f7f7;
+    --card: #ffffff;
+    --line: #dfe7e7;
+    --ink: #12242a;
+    --ink-soft: #4d666d;
+    --ink-faint: #7b9196;
+    --teal: #14636a;
+    --accent: #a4650c;
+    --accent-mark: #f2b45c;
+    --code-bg: #eef3f3;
+    --shadow: 0 1px 2px rgba(18,36,42,.06), 0 8px 28px rgba(18,36,42,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #080f12;
+      --card: #0f1b1f;
+      --line: #1e3037;
+      --ink: #e7f0ef;
+      --ink-soft: #a3bcbd;
+      --ink-faint: #7b9497;
+      --teal: #4fb0a8;
+      --accent: #f2b45c;
+      --accent-mark: #f2b45c;
+      --code-bg: #14252a;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  code, .mono {
+    font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: .88em;
+  }
+  code {
+    background: var(--code-bg);
+    padding: .12em .38em;
+    border-radius: 4px;
+  }
+
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: var(--card);
+  }
+  .topbar div {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .topbar strong { color: var(--ink); letter-spacing: .06em; }
+  .pill {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 2px 11px;
+    font-size: 11px;
+    letter-spacing: .12em;
+  }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 34px 28px 90px; }
+
+  .banner {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+  }
+  .banner svg { display: block; width: 100%; height: auto; }
+  .caption {
+    color: var(--ink-faint);
+    font-size: 13px;
+    margin: 0 0 44px;
+  }
+
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 10px; }
+  h2 {
+    font-size: 13px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 52px 0 16px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+  }
+  p { margin: 0 0 16px; max-width: 74ch; }
+  .lede { font-size: 19px; line-height: 1.55; color: var(--ink-soft); max-width: 66ch; margin-bottom: 30px; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 0 8px;
+  }
+  .facts div { background: var(--card); padding: 13px 16px; }
+  .facts dt {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .facts dd { margin: 0; font-size: 15px; }
+
+  table { border-collapse: collapse; width: 100%; margin: 0 0 10px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .tablewrap {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+  }
+  .need { color: var(--accent); font-weight: 600; }
+
+  .note {
+    color: var(--ink-faint);
+    font-size: 13.5px;
+    max-width: 74ch;
+    margin: 0 0 16px;
+  }
+
+
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 13px; }
+  a { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div>
+  <span class="pill">Serie</span>
+  <strong>Banner-Serie der Bundles</strong>
+  <span>ellmos-ai / bundles &nbsp;·&nbsp; <code>ellmos-agents-bundle</code> &nbsp;·&nbsp; lokale Vorschau, nicht veröffentlicht</span>
+</div></div>
+
+<main>
+
+  <div class="banner">
+    <!--BANNER-SVG-->
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Agents Bundle — Klarwasser (control pillar)">
+      <title>Agents Bundle — Klarwasser (control pillar)</title>
+      <defs>
+        <!-- Sky and water meet at the waterline in the same colour, so the horizon is
+             drawn by the hairline below and never by a seam between two rectangles. -->
+        <linearGradient id="bnr-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0a3a35"/>
+          <stop offset="1" stop-color="#12655c"/>
+        </linearGradient>
+        <linearGradient id="bnr-water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#12655c"/>
+          <stop offset="1" stop-color="#04211f"/>
+        </linearGradient>
+        <radialGradient id="bnr-lamp" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#5fe3c0" stop-opacity="0.34"/>
+          <stop offset="0.55" stop-color="#5fe3c0" stop-opacity="0.09"/>
+          <stop offset="1" stop-color="#5fe3c0" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bnr-veil" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#04211f" stop-opacity="0.97"/>
+          <stop offset="0.55" stop-color="#04211f" stop-opacity="0.62"/>
+          <stop offset="1" stop-color="#04211f" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1200" height="208" fill="url(#bnr-sky)"/>
+      <rect y="208" width="1200" height="92" fill="url(#bnr-water)"/>
+      <rect x="520" y="208" width="680" height="1" fill="#1f9b86" opacity="0.5"/>
+
+      <g id="scene-helm">
+        <g fill="#02160f" opacity="0.9">
+          <rect x="838" y="186" width="188" height="15"/>
+          <rect x="858" y="201" width="9" height="58"/>
+          <rect x="906" y="201" width="9" height="58"/>
+          <rect x="954" y="201" width="9" height="58"/>
+          <rect x="1002" y="201" width="9" height="58"/>
+          <rect x="923" y="150" width="14" height="38"/>
+        </g>
+        <rect x="838" y="186" width="188" height="1" fill="#1f9b86" opacity="0.3"/>
+        <g fill="#02160f" opacity="0.72">
+          <rect x="838" y="163" width="74" height="3"/>
+          <rect x="992" y="163" width="34" height="3"/>
+          <rect x="840" y="166" width="3" height="20"/>
+          <rect x="872" y="166" width="3" height="20"/>
+          <rect x="906" y="166" width="3" height="20"/>
+          <rect x="994" y="166" width="3" height="20"/>
+          <rect x="1022" y="166" width="3" height="20"/>
+        </g>
+        <g stroke="#02160f" stroke-linecap="round" fill="none" opacity="0.92">
+          <circle cx="930" cy="116" r="51" stroke-width="6"/>
+          <path d="M 937.1 108.9 L 981.6 64.4" stroke-width="5.4"/>
+          <path d="M 940 116 L 1003 116" stroke-width="5.4"/>
+          <path d="M 937.1 123.1 L 981.6 167.6" stroke-width="5.4"/>
+          <path d="M 930 126 L 930 189" stroke-width="5.4"/>
+          <path d="M 922.9 123.1 L 878.4 167.6" stroke-width="5.4"/>
+          <path d="M 920 116 L 857 116" stroke-width="5.4"/>
+          <path d="M 922.9 108.9 L 878.4 64.4" stroke-width="5.4"/>
+        </g>
+        <circle cx="930" cy="116" r="10" fill="#02160f" opacity="0.92"/>
+        <path d="M 930 106 L 930 43" fill="none" stroke="#5fe3c0" stroke-width="5.4" stroke-linecap="round" stroke-opacity="0.92"/>
+        <circle cx="930" cy="36" r="4.2" fill="#5fe3c0" opacity="0.9"/>
+        <g stroke="#1f9b86" stroke-linecap="round" stroke-opacity="0.3">
+          <path d="M 632 288 L 690 280.2" stroke-width="1.5"/>
+          <path d="M 712 277 L 764 270" stroke-width="1.5"/>
+          <path d="M 786 267 L 832 260.8" stroke-width="1.5"/>
+          <path d="M 854 258 L 894 252.6" stroke-width="1.5"/>
+          <path d="M 916 250 L 950 245.4" stroke-width="1.5"/>
+          <path d="M 972 243 L 1000 239.2" stroke-width="1.5"/>
+          <path d="M 1022 237 L 1044 234" stroke-width="1.5"/>
+          <path d="M 1066 232 L 1082 229.8" stroke-width="1.5"/>
+        </g>
+        <g stroke="#1f9b86" stroke-linecap="round" stroke-opacity="0.14">
+          <path d="M 1090 222 h 40" stroke-width="1.4"/>
+          <path d="M 1136 246 h 30" stroke-width="1.4"/>
+          <path d="M 660 232 h 34" stroke-width="1.4"/>
+          <path d="M 1044 284 h 44" stroke-width="1.4"/>
+        </g>
+        <rect y="208" width="1200" height="92" fill="#04211f" opacity="0.22"/>
+      </g>
+
+      <rect width="760" height="300" fill="url(#bnr-veil)"/>
+
+      <g transform="translate(72 0)">
+        <rect x="0" y="88" width="207.5" height="26" rx="13" fill="none" stroke="#5fe3c0" stroke-opacity="0.5"/>
+        <text x="15" y="105.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="11" letter-spacing="1.7" fill="#5fe3c0" fill-opacity="0.92">CONTROL · KLARWASSER</text>
+        <text x="-2" y="171" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="52" font-weight="600" letter-spacing="-0.6" fill="#e8fbf5">Agents Bundle</text>
+        <text x="0" y="201" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="0.5" fill="#86b8ad">ellmos-agents-bundle</text>
+      </g>
+
+      <rect y="297" width="1200" height="3" fill="#5fe3c0" opacity="0.85"/>
+    </svg>
+    <!--/BANNER-SVG-->
+  </div>
+  <p class="caption">
+    <code>assets/banners/ellmos-agents-bundle.svg</code> — 1200 × 300, aus
+    <code>tools/generate_banner.py</code>. Reiner Vektor, keine externen Schriften oder Bilder.
+  </p>
+  <h1>Agents Bundle</h1>
+  <p class="lede">Die Agenten selbst und was es braucht, um sie zu erreichen: lokale Begleiter, kommerzielle Anbieter, Abonnements und API-Zugänge.</p>
+  <dl class="facts">
+    <div><dt>Bundle-ID</dt><dd><code>ellmos-agents-bundle</code></dd></div>
+    <div><dt>Säule</dt><dd><code>control</code> — steuert das System</dd></div>
+    <div><dt>Klasse</dt><dd><code>platform</code> — funktional, zählt in der Deployment-Auflösung</dd></div>
+    <div><dt>Version</dt><dd>1.0.0</dd></div>
+    <div><dt>Status / Lifecycle</dt><dd><code>registered</code> / <code>draft</code></dd></div>
+    <div><dt>Sichtbarkeit</dt><dd><code>private</code> (bis eine Welle freigegeben ist)</dd></div>
+    <div><dt>Komponenten</dt><dd>7 — vier empfohlen, drei optional</dd></div>
+    <div><dt>Ring</dt><dd>Ring 1 der Erstprojektion</dd></div>
+  </dl>
+
+  <h2>Wofür dieses Bundle da ist</h2>
+  <p>
+    Solange es keine eigene Laufzeit gibt, wird ein Rezept von einer Agenten-CLI ausgeführt, die ohnehin läuft. Dieses Bundle beschreibt genau diesen Zugang — es ist der Platzhalter für die Laufzeit, die noch nicht existiert, und deshalb Teil des funktionalen Kerns.
+  </p>
+  <p>
+    Das Manifest sagt selbst, was es besonders macht: <em>the only hub whose members are largely not repositories</em>. Drei seiner sieben Mitglieder sind <strong>Zugangsflächen</strong> (<code>access_surface</code>) — kein Code, den man klont, sondern ein Anbieter, ein Abonnement, ein API-Schlüssel. Der Typ wurde bewusst gewählt: Er ist der, den der festgenagelte Resolver in einem Bundle-Manifest bereits akzeptiert.
+  </p>
+  <p>
+    Alle drei verlangen <code>provider-credentials</code>, und dazu steht eine Regel im Manifest, die keine Ausnahme kennt: <strong>niemals ein Geheimnis, immer nur ein Ort.</strong> Die Werte bleiben im Credentials-Ordner außerhalb von OneDrive und außerhalb jedes Repositoriums; ein Rezept nennt den Fundort, nie den Inhalt.
+  </p>
+
+  <h2>Das Bild: Klarwasser</h2>
+  <p>
+    Das Klarwasser ist die Control-Säule, und ihr Zeichen ist das Steuerrad: ruhiges Wasser, in dem man den Kurs sieht, bevor man ihn hält. Eine Speiche ist markiert — die Königsspeiche, die traditionell anzeigt, dass das Ruder mittschiffs steht. Sie ist der einzige Akzent im Bild, weil Steuern heißt: <strong>einen</strong> Kurs kenntlich machen.
+  </p>
+  <p>
+    Für den Zugang zu den Agenten passt es doppelt: Das Steuerrad ist der Ort, an dem man <strong>etwas</strong> in der Hand hält — auch dann, wenn das Schiff einem nicht gehört.
+  </p>
+
+  <h2>Komponenten</h2>
+  <p class="note">
+    Ein Modul, drei Zugangsflächen, drei Skills.
+  </p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Rolle</th><th>Komponente</th><th>Version</th><th>Bedarf</th><th>liefert</th><th>braucht</th></tr></thead>
+    <tbody>
+      <tr><td>Lokaler Begleiter</td><td><code>module:companion-for-agy</code></td><td><code>v4-shadow</code></td><td><span class="need">empfohlen</span></td><td>—</td><td>—</td></tr>
+      <tr><td>Anbieter</td><td><code>access_surface:agent-providers</code></td><td><code>v4-shadow</code></td><td><span class="need">empfohlen</span></td><td><code>agent-runtime-access</code></td><td><code>provider-credentials</code></td></tr>
+      <tr><td>Abonnements</td><td><code>access_surface:agent-subscriptions</code></td><td><code>v4-shadow</code></td><td>optional</td><td><code>provider-quota</code></td><td><code>provider-credentials</code></td></tr>
+      <tr><td>API-Zugänge</td><td><code>access_surface:agent-apis</code></td><td><code>v4-shadow</code></td><td>optional</td><td><code>programmatic-agent-access</code></td><td><code>provider-credentials</code></td></tr>
+      <tr><td>Modellwahl</td><td><code>skill:model-strategy</code></td><td><code>registry-current</code></td><td><span class="need">empfohlen</span></td><td><code>model-routing-decision</code></td><td><code>provider-capabilities</code></td></tr>
+      <tr><td>Startregeln</td><td><code>skill:agents-bridge</code></td><td><code>registry-current</code></td><td><span class="need">empfohlen</span></td><td><code>multi-agent-boot-pointer</code></td><td><code>canonical-authorities</code></td></tr>
+      <tr><td>Unbeaufsichtigte Läufe</td><td><code>skill:headless</code></td><td><code>registry-current</code></td><td>optional</td><td><code>unattended-run-mode</code></td><td><code>approved-autonomy-scope</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">
+    Eine Lücke ist im Manifest vermerkt statt verschwiegen: <strong>kein Skill deckt heute die Inventur von Anbietern, Abonnements und Kontingenten ab.</strong> Der Kandidatenname aus dem Vorschlagsdokument ist festgehalten (<code>provider-subscription-inventory</code>), gebaut ist er nicht.
+  </p>
+  <p class="note">
+    <strong>Profile:</strong> <code>full</code> und <code>operator</code>, beide ohne Ein- oder Ausschlüsse.
+  </p>
+
+  <h2>Ampel</h2>
+  <p>
+    Der Rollout ist inkrementell: Ein Bundle geht grün, wenn <strong>jede</strong> seiner Komponenten öffentlich und geprüft ist. Genau das ist das Aufnahmekriterium dieses Repos — die 13 projizierten Bundles sind die, deren Komponenten heute vollständig öffentlich sind, optionale eingeschlossen. Dieses Bundle ist damit <strong>grün-fähig</strong>.
+  </p>
+  <p>
+    Grün-fähig heißt nicht veröffentlicht. Die Freigabe einer Welle ist eine ausdrückliche Entscheidung des Eigentümers (<code>PRIVATE.txt</code>), und keine Automatik nimmt sie vorweg.
+  </p>
+
+  <h2>Herkunft und Prüfbarkeit</h2>
+  <div class="tablewrap">
+  <table><tbody>
+      <tr><th>Manifest</th><td>&lt;code&gt;manifests/bundles/ellmos-agents-bundle/bundle.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Katalog-Eintrag</th><td>&lt;code&gt;manifests/bundles.catalog.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Funktionsvertrag</th><td>&lt;code&gt;contracts/bundle-family-contract.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Zusicherungsvertrag</th><td><code>contract:mandatory-assurance-v1</code> (1.0.0)</td></tr>
+      <tr><th><code>content_hash</code></th><td><code>ac6c116860bdadc0df52d0e1f270117808d32071cf3b6cef3f1be4dabf1d3808</code></td></tr>
+  </tbody></table>
+  </div>
+  <p>
+    Der <code>content_hash</code> läuft über das Manifest ohne das Hash-Feld selbst — er ist an Ort und Stelle nachrechenbar, ohne Zusatzdatei.
+  </p>
+  <p>
+    Das Manifest wird <strong>nicht hier gepflegt</strong>, sondern aus der privaten Kompositionsquelle projiziert (<code>tools/export_from_source.py</code>). Der Banner dagegen entsteht in diesem Repo, aus <code>assets/design/</code> heraus: <code>python tools/generate_banner.py ellmos-agents-bundle</code>. <code>--check</code> statt Schreiben meldet Abweichung.
+  </p>
+
+  <footer>
+    Lokale Vorschau, kein veröffentlichter Stand. Die Markdown-Fassung dieser Seite liegt unter <code>docs/bundles/ellmos-agents-bundle.md</code>,
+    die Übersicht unter <a href="../bundles/README.md">docs/bundles/README.md</a>. Bildsprache nach <code>SYSTEM-PRODUKTLINIE.md</code> §6b.
+  </footer>
+
+</main>
+</body>
+</html>

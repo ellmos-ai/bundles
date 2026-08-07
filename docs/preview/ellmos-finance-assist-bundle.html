@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Assist Bundle — Bundle-Seite</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f7f7;
+    --card: #ffffff;
+    --line: #dfe7e7;
+    --ink: #12242a;
+    --ink-soft: #4d666d;
+    --ink-faint: #7b9196;
+    --teal: #14636a;
+    --accent: #a4650c;
+    --accent-mark: #f2b45c;
+    --code-bg: #eef3f3;
+    --shadow: 0 1px 2px rgba(18,36,42,.06), 0 8px 28px rgba(18,36,42,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #080f12;
+      --card: #0f1b1f;
+      --line: #1e3037;
+      --ink: #e7f0ef;
+      --ink-soft: #a3bcbd;
+      --ink-faint: #7b9497;
+      --teal: #4fb0a8;
+      --accent: #f2b45c;
+      --accent-mark: #f2b45c;
+      --code-bg: #14252a;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  code, .mono {
+    font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: .88em;
+  }
+  code {
+    background: var(--code-bg);
+    padding: .12em .38em;
+    border-radius: 4px;
+  }
+
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: var(--card);
+  }
+  .topbar div {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .topbar strong { color: var(--ink); letter-spacing: .06em; }
+  .pill {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 2px 11px;
+    font-size: 11px;
+    letter-spacing: .12em;
+  }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 34px 28px 90px; }
+
+  .banner {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+  }
+  .banner svg { display: block; width: 100%; height: auto; }
+  .caption {
+    color: var(--ink-faint);
+    font-size: 13px;
+    margin: 0 0 44px;
+  }
+
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 10px; }
+  h2 {
+    font-size: 13px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 52px 0 16px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+  }
+  p { margin: 0 0 16px; max-width: 74ch; }
+  .lede { font-size: 19px; line-height: 1.55; color: var(--ink-soft); max-width: 66ch; margin-bottom: 30px; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 0 8px;
+  }
+  .facts div { background: var(--card); padding: 13px 16px; }
+  .facts dt {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .facts dd { margin: 0; font-size: 15px; }
+
+  table { border-collapse: collapse; width: 100%; margin: 0 0 10px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .tablewrap {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+  }
+  .need { color: var(--accent); font-weight: 600; }
+
+  .note {
+    color: var(--ink-faint);
+    font-size: 13.5px;
+    max-width: 74ch;
+    margin: 0 0 16px;
+  }
+
+
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 13px; }
+  a { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div>
+  <span class="pill">Serie</span>
+  <strong>Banner-Serie der Bundles</strong>
+  <span>ellmos-ai / bundles &nbsp;·&nbsp; <code>ellmos-finance-assist-bundle</code> &nbsp;·&nbsp; lokale Vorschau, nicht veröffentlicht</span>
+</div></div>
+
+<main>
+
+  <div class="banner">
+    <!--BANNER-SVG-->
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Finance Assist Bundle — Hafen (uas pillar)">
+      <title>Finance Assist Bundle — Hafen (uas pillar)</title>
+      <defs>
+        <!-- Sky and water meet at the waterline in the same colour, so the horizon is
+             drawn by the hairline below and never by a seam between two rectangles. -->
+        <linearGradient id="bnr-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0c3b42"/>
+          <stop offset="1" stop-color="#14636a"/>
+        </linearGradient>
+        <linearGradient id="bnr-water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#14636a"/>
+          <stop offset="1" stop-color="#061e26"/>
+        </linearGradient>
+        <radialGradient id="bnr-lamp" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#f2b45c" stop-opacity="0.34"/>
+          <stop offset="0.55" stop-color="#f2b45c" stop-opacity="0.09"/>
+          <stop offset="1" stop-color="#f2b45c" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bnr-veil" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#061e26" stop-opacity="0.97"/>
+          <stop offset="0.55" stop-color="#061e26" stop-opacity="0.62"/>
+          <stop offset="1" stop-color="#061e26" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1200" height="208" fill="url(#bnr-sky)"/>
+      <rect y="208" width="1200" height="92" fill="url(#bnr-water)"/>
+      <rect x="520" y="208" width="680" height="1" fill="#2c8f8c" opacity="0.5"/>
+
+      <g id="scene-harbour">
+        <g fill="#04141a" opacity="0.9">
+          <rect x="950" y="150" width="250" height="22"/>
+          <rect x="985" y="172" width="10" height="90"/>
+          <rect x="1042" y="172" width="10" height="90"/>
+          <rect x="1099" y="172" width="10" height="90"/>
+          <rect x="1156" y="172" width="10" height="90"/>
+          <path d="M 964 150 L 966 136 L 982 136 L 984 150 Z"/>
+          <rect x="961" y="130" width="26" height="7" rx="2.5"/>
+          <rect x="1168" y="98" width="4" height="52"/>
+          <path d="M 1160 99 L 1180 99 L 1175 88 L 1165 88 Z"/>
+        </g>
+        <rect x="950" y="150" width="250" height="1" fill="#2c8f8c" opacity="0.3"/>
+        <g fill="#04141a" opacity="0.9">
+          <rect x="623" y="118" width="10" height="142"/>
+          <rect x="619" y="112" width="18" height="7" rx="2.5"/>
+        </g>
+        <ellipse cx="1170" cy="100" rx="118" ry="96" fill="url(#bnr-lamp)"/>
+        <circle cx="1170" cy="94" r="4.5" fill="#f2b45c" opacity="0.9"/>
+        <path d="M 628 120 Q 801 168 974 132" fill="none" stroke="#2c8f8c" stroke-width="1.6" stroke-opacity="0.7" stroke-linecap="round"/>
+        <g stroke-linecap="round" fill="none" opacity="0.62">
+          <path d="M 868.3 143.4 Q 901.3 151.4 934.3 143.4" stroke="#2c8f8c" stroke-width="1.7" stroke-opacity="0.85"/>
+          <path d="M 869.7 159.8 Q 901.6 173.8 933.4 159.8" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 874.8 176.1 Q 902.3 188.2 929.8 176.1" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 886.2 192.4 Q 903.5 200 920.8 192.4" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 868.3 143.4 C 866.7 175.3 886.2 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+          <path d="M 881.5 146 C 880.6 175.3 893.5 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 894.7 147.3 C 894.4 175.3 900.7 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 907.9 147.3 C 908.3 175.3 908 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 921.1 146 C 922.1 175.3 915.2 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 934.3 143.4 C 936 175.3 922.5 200.3 904.3 201.4" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+        </g>
+        <g stroke-linecap="round" fill="none" opacity="0.78">
+          <path d="M 766.9 147.2 Q 807.9 157.2 848.9 147.2" stroke="#2c8f8c" stroke-width="1.7" stroke-opacity="0.85"/>
+          <path d="M 768 168.1 Q 807.6 185.5 847.2 168.1" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 772.5 188.9 Q 806.7 203.9 840.8 188.9" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 783.6 209.7 Q 805.1 219.2 826.6 209.7" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 766.9 147.2 C 764.9 187.9 781.4 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+          <path d="M 780.6 150 C 779.2 187.9 788.9 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 794.3 151.7 C 793.6 187.9 796.4 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 807.9 152.2 C 807.9 187.9 803.9 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 821.6 151.7 C 822.3 187.9 811.4 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 835.3 150 C 836.6 187.9 819 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 848.9 147.2 C 851 187.9 826.5 219.7 803.9 221.2" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+        </g>
+        <g stroke-linecap="round" fill="none" opacity="1">
+          <path d="M 646.1 137.1 Q 704.1 151.1 762.1 137.1" stroke="#2c8f8c" stroke-width="1.7" stroke-opacity="0.85"/>
+          <path d="M 647.6 159.9 Q 704.4 184.9 761.3 159.9" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 652.7 182.8 Q 705.3 205.9 757.8 182.8" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 662.9 205.6 Q 706.7 224.9 750.5 205.6" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 681.9 228.5 Q 708.8 240.3 735.6 228.5" stroke="#2c8f8c" stroke-width="0.9" stroke-opacity="0.42"/>
+          <path d="M 646.1 137.1 C 643.2 194.3 678.2 239 710.1 241.1" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+          <path d="M 660.6 140.1 C 658.4 194.3 686.2 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 675.1 142.3 C 673.7 194.3 694.2 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 689.6 143.6 C 688.9 194.3 702.1 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 704.1 144.1 C 704.1 194.3 710.1 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 718.6 143.6 C 719.3 194.3 718.1 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 733.1 142.3 C 734.6 194.3 726.1 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 747.6 140.1 C 749.8 194.3 734 239 710.1 241.1" stroke="#2c8f8c" stroke-width="0.85" stroke-opacity="0.4"/>
+          <path d="M 762.1 137.1 C 765 194.3 742 239 710.1 241.1" stroke="#2c8f8c" stroke-width="1.5" stroke-opacity="0.8"/>
+        </g>
+        <g transform="translate(676 200) rotate(-7) scale(0.5 0.5)" fill="#f2b45c" opacity="0.95">
+          <path d="M 0 0 C 18 -30 62 -30 100 0 C 62 30 18 30 0 0 Z"/>
+          <path d="M 0 0 L -26 -18.7 L -18.7 0 L -26 18.7 Z"/>
+          <path d="M 34 -26.4 Q 47 -60 60 -25.2 Z"/>
+          <circle cx="80" cy="-5.5" r="3.2" fill="#061e26" fill-opacity="0.75"/>
+        </g>
+        <g transform="translate(700 228) rotate(9) scale(0.3 0.3)" fill="#8daeb0" opacity="0.72">
+          <path d="M 0 0 C 18 -20 62 -20 100 0 C 62 20 18 20 0 0 Z"/>
+          <path d="M 0 0 L -24 -17.3 L -17.3 0 L -24 17.3 Z"/>
+          <circle cx="80" cy="-5.5" r="3.2" fill="#061e26" fill-opacity="0.75"/>
+        </g>
+        <g transform="translate(704 266) rotate(-4) scale(-0.6 0.6)" fill="#8daeb0" opacity="0.62">
+          <path d="M 0 0 C 18 -14.5 62 -14.5 100 0 C 62 14.5 18 14.5 0 0 Z"/>
+          <path d="M 0 0 L -28 -20.2 L -20.2 0 L -28 20.2 Z"/>
+          <path d="M 34 -12.8 Q 47 -29 60 -12.2 Z"/>
+          <circle cx="80" cy="-5.5" r="3.2" fill="#061e26" fill-opacity="0.75"/>
+        </g>
+        <g transform="translate(842 262) rotate(4) scale(0.4 0.4)" fill="#8daeb0" opacity="0.4">
+          <path d="M 0 0 C 18 -36 62 -36 100 0 C 62 36 18 36 0 0 Z"/>
+          <path d="M 0 0 L -18 -13 L -13 0 L -18 13 Z"/>
+          <circle cx="80" cy="-5.5" r="3.2" fill="#061e26" fill-opacity="0.75"/>
+        </g>
+        <g stroke="#2c8f8c" stroke-linecap="round" stroke-opacity="0.18">
+          <path d="M 650 232 h 40" stroke-width="1.4"/>
+          <path d="M 884 244 h 56" stroke-width="1.4"/>
+          <path d="M 1024 224 h 34" stroke-width="1.4"/>
+          <path d="M 766 284 h 48" stroke-width="1.4"/>
+          <path d="M 952 276 h 30" stroke-width="1.4"/>
+          <path d="M 620 258 h 26" stroke-width="1.4"/>
+        </g>
+        <g stroke="#f2b45c" stroke-linecap="round">
+          <path d="M 1152 218 h 44" stroke-width="2" stroke-opacity="0.2"/>
+          <path d="M 1140 234 h 62" stroke-width="2" stroke-opacity="0.13"/>
+          <path d="M 1158 250 h 34" stroke-width="2" stroke-opacity="0.1"/>
+          <path d="M 1132 266 h 50" stroke-width="2" stroke-opacity="0.07"/>
+        </g>
+        <rect y="208" width="1200" height="92" fill="#061e26" opacity="0.22"/>
+      </g>
+
+      <rect width="760" height="300" fill="url(#bnr-veil)"/>
+
+      <g transform="translate(72 0)">
+        <rect x="0" y="88" width="126.9" height="26" rx="13" fill="none" stroke="#f2b45c" stroke-opacity="0.5"/>
+        <text x="15" y="105.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="11" letter-spacing="1.7" fill="#f2b45c" fill-opacity="0.92">UAS · HAFEN</text>
+        <text x="-2" y="171" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="45" font-weight="600" letter-spacing="-0.6" fill="#eef6f4">Finance Assist Bundle</text>
+        <text x="0" y="201" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="0.5" fill="#8daeb0">ellmos-finance-assist-bundle</text>
+      </g>
+
+      <rect y="297" width="1200" height="3" fill="#f2b45c" opacity="0.85"/>
+    </svg>
+    <!--/BANNER-SVG-->
+  </div>
+  <p class="caption">
+    <code>assets/banners/ellmos-finance-assist-bundle.svg</code> — 1200 × 300, aus
+    <code>tools/generate_banner.py</code>. Reiner Vektor, keine externen Schriften oder Bilder.
+  </p>
+  <h1>Finance Assist Bundle</h1>
+  <p class="lede">Persönlicher Überblick über Geld und Versicherungen.</p>
+  <dl class="facts">
+    <div><dt>Bundle-ID</dt><dd><code>ellmos-finance-assist-bundle</code></dd></div>
+    <div><dt>Säule</dt><dd><code>uas</code> — bedient die Person direkt</dd></div>
+    <div><dt>Klasse</dt><dd><code>domain</code> — funktional, zählt in der Deployment-Auflösung</dd></div>
+    <div><dt>Version</dt><dd>1.0.0</dd></div>
+    <div><dt>Status / Lifecycle</dt><dd><code>registered</code> / <code>draft</code></dd></div>
+    <div><dt>Sichtbarkeit</dt><dd><code>private</code> (bis eine Welle freigegeben ist)</dd></div>
+    <div><dt>Komponenten</dt><dd>1 — empfohlen</dd></div>
+    <div><dt>Ring</dt><dd>Ring 2 der Erstprojektion</dd></div>
+  </dl>
+
+  <h2>Wofür dieses Bundle da ist</h2>
+  <p>
+    Ebenfalls eine Komponente — und ebenfalls mit einer Abgrenzung, die mehr trägt als die Zutatenliste. Das Manifest stellt dieses Bundle neben das private Büro-Bundle und unterscheidet die beiden in einem Satz: <strong>Dieses gibt der Person einen Überblick, jenes gibt dem Fachmann ein Instrument.</strong>
+  </p>
+  <p>
+    Der Unterschied ist keine Geschmacksfrage, sondern entscheidet die Säulenzuordnung. Ein Überblick für die betroffene Person gehört in den Hafen; ein steuerliches oder juristisches Werkzeug für die Berufsausübung wäre Fachgut und läge im Frachtwasser.
+  </p>
+
+  <h2>Das Bild: Hafen</h2>
+  <p>
+    Der Hafen ist die UAS-Säule — der Ort, an dem Mensch und System aneinander andocken. Am Kai hängen <strong>verschiedene Netze</strong>: jeder Dienst ein eigenes, für seinen eigenen Fang gebaut. Und was darin liegt, sind <strong>verschiedene Fischarten</strong> — die Endprodukte, so wie man sie bekommt: aufbereitet und verwertbar, nicht Rohdaten. Ein Netz hält den Fang, auf den das Licht fällt; die anderen hängen daneben, bereit.
+  </p>
+  <p>
+    Der Fang ist hier der Überblick selbst — aufbereitet und verwertbar, nicht der Rohbestand.
+  </p>
+
+  <h2>Komponenten</h2>
+  <p class="note">
+    Ein Skill.
+  </p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Rolle</th><th>Komponente</th><th>Version</th><th>Bedarf</th><th>liefert</th><th>braucht</th></tr></thead>
+    <tbody>
+      <tr><td>Finanz- und Versicherungsüberblick</td><td><code>skill:finanz-versicherung</code></td><td><code>registry-current</code></td><td><span class="need">empfohlen</span></td><td><code>insurance-overview</code></td><td><code>approved-private-context</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">
+    <code>approved-private-context</code> ist die engste Freigabeform, die in der UAS-Säule vorkommt — enger als der <code>approved-personal-context</code> der Alltagsdienste.
+  </p>
+  <p class="note">
+    <strong>Profile:</strong> <code>full</code> und <code>operator</code>, beide ohne Ein- oder Ausschlüsse.
+  </p>
+
+  <h2>Ampel</h2>
+  <p>
+    Der Rollout ist inkrementell: Ein Bundle geht grün, wenn <strong>jede</strong> seiner Komponenten öffentlich und geprüft ist. Genau das ist das Aufnahmekriterium dieses Repos — die 13 projizierten Bundles sind die, deren Komponenten heute vollständig öffentlich sind, optionale eingeschlossen. Dieses Bundle ist damit <strong>grün-fähig</strong>.
+  </p>
+  <p>
+    Grün-fähig heißt nicht veröffentlicht. Die Freigabe einer Welle ist eine ausdrückliche Entscheidung des Eigentümers (<code>PRIVATE.txt</code>), und keine Automatik nimmt sie vorweg.
+  </p>
+
+  <h2>Herkunft und Prüfbarkeit</h2>
+  <div class="tablewrap">
+  <table><tbody>
+      <tr><th>Manifest</th><td>&lt;code&gt;manifests/bundles/ellmos-finance-assist-bundle/bundle.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Katalog-Eintrag</th><td>&lt;code&gt;manifests/bundles.catalog.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Funktionsvertrag</th><td>&lt;code&gt;contracts/bundle-family-contract.v1.json&lt;/code&gt;</td></tr>
+      <tr><th>Zusicherungsvertrag</th><td><code>contract:mandatory-assurance-v1</code> (1.0.0)</td></tr>
+      <tr><th><code>content_hash</code></th><td><code>a7981f30dec611f1cf7fcb17ba0b2eefa239f954603bf75ea51156fa414d79c4</code></td></tr>
+  </tbody></table>
+  </div>
+  <p>
+    Der <code>content_hash</code> läuft über das Manifest ohne das Hash-Feld selbst — er ist an Ort und Stelle nachrechenbar, ohne Zusatzdatei.
+  </p>
+  <p>
+    Das Manifest wird <strong>nicht hier gepflegt</strong>, sondern aus der privaten Kompositionsquelle projiziert (<code>tools/export_from_source.py</code>). Der Banner dagegen entsteht in diesem Repo, aus <code>assets/design/</code> heraus: <code>python tools/generate_banner.py ellmos-finance-assist-bundle</code>. <code>--check</code> statt Schreiben meldet Abweichung.
+  </p>
+
+  <footer>
+    Lokale Vorschau, kein veröffentlichter Stand. Die Markdown-Fassung dieser Seite liegt unter <code>docs/bundles/ellmos-finance-assist-bundle.md</code>,
+    die Übersicht unter <a href="../bundles/README.md">docs/bundles/README.md</a>. Bildsprache nach <code>SYSTEM-PRODUKTLINIE.md</code> §6b.
+  </footer>
+
+</main>
+</body>
+</html>
