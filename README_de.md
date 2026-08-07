@@ -94,9 +94,9 @@ Der Rollout ist inkrementell, kein Big Bang. Ein Bundle geht grün, wenn jede se
 |---|---|
 | Bundles grün-fähig | **13** |
 | Blockiert durch nicht-öffentliche Komponenten | 17 weitere Bundles |
-| Größter Einzelhebel | vier private Repositories blockieren zusammen sieben Bundles |
+| Größter Einzelhebel | am 2026-08-08 weitgehend aufgelöst — drei der vier Repositories sind öffentlich; allein `ellmos-core` blockiert noch drei Bundles |
 
-Ob diese vier öffentlich werden, entscheidet der Eigentümer des Ökosystems; kein automatischer
+Ob `ellmos-core` nachzieht, entscheidet der Eigentümer des Ökosystems; kein automatischer
 Prozess nimmt das vorweg.
 
 ## Freigabebedingungen
@@ -166,5 +166,5 @@ SVG: keine externen Schriften, keine Rastergrafiken, keine Netzverweise.
 
 ## Lizenz
 
-Noch nicht entschieden. Sie ist Teil der Publikationsprüfung und wird vor der ersten Welle
-geklärt.
+MIT, am 2026-08-08 vom Eigentümer gewählt und als [`LICENSE`](LICENSE) committet. Damit ist der
+Lizenzteil der Publikationsprüfung erledigt; deren Rechts- und Privacy-Teil bleibt offen, je Welle.

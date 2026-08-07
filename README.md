@@ -92,9 +92,9 @@ and checked.
 |---|---|
 | Bundles green-capable | **13** |
 | Blocked by components that are not public | 17 further bundles |
-| Largest single lever | four private repositories block seven bundles between them |
+| Largest single lever | largely resolved on 2026-08-08 — three of the four repositories are public; `ellmos-core` alone still blocks three bundles |
 
-Whether those four become public is a decision for the owner of the ecosystem, and no automated
+Whether `ellmos-core` follows is a decision for the owner of the ecosystem, and no automated
 process anticipates it.
 
 ## Release conditions
@@ -161,4 +161,5 @@ no network references.
 
 ## Licence
 
-Not yet settled. It is part of the publication check and will be fixed before the first wave.
+MIT, chosen by the owner on 2026-08-08 and committed as [`LICENSE`](LICENSE). That settles the
+licence part of the publication check; its law and privacy parts stay open, per wave.
