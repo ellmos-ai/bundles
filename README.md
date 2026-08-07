@@ -134,24 +134,30 @@ python tools/export_from_source.py --source <path-to-source> --check
 
 ## Banners and pages
 
-**Status: pilot.** One bundle — `ellmos-daily-life-bundle` — has a banner and a page, as a
-design sample. Palette, scene and page layout go to review before the rest follow, so what
-exists today is deliberately one of thirteen and not thirteen of thirteen.
+**Status: the series is complete.** All 13 bundles have a banner, a page in German and a
+self-contained local preview. The design was ratified on the pilot
+(`ellmos-daily-life-bundle`) and is frozen since: palettes, template and generator do not move
+any more, the series only adds scenes and polishes over the catalogue.
+
+**→ [`docs/bundles/README.md`](docs/bundles/README.md) is the index**, grouped by pillar, with
+every banner in it.
 
 The visual language comes from the ecosystem's water lexicon: each of the four pillars is a
-body of water with its own light and its own symbol — the harbour for `uas`, where different
-nets catch different fish. `assets/design/README.md` carries the rules the series keeps;
-`assets/design/tokens.json` is the single place a colour is decided.
+body of water with its own light and its own symbol.
 
-| | |
-|---|---|
-| Banner | [`assets/banners/ellmos-daily-life-bundle.svg`](assets/banners/ellmos-daily-life-bundle.svg) |
-| Page (German) | [`docs/bundles/ellmos-daily-life-bundle.md`](docs/bundles/ellmos-daily-life-bundle.md) |
-| Local preview | [`docs/preview/ellmos-daily-life-bundle.html`](docs/preview/ellmos-daily-life-bundle.html) |
+| Pillar | Water | The picture |
+|---|---|---|
+| `memory` | deep water | the boat and the track opening astern — the memory carries, and it is the distance covered |
+| `control` | clear water | the helm, one spoke marked: steering means making one course legible |
+| `uas` | the harbour | different nets catch different fish; the species are the end products as one gets them |
+| `domain` | freight water | crane, barge, containers — one piece of freight moves at a time |
+
+`assets/design/README.md` carries the rules the series keeps, including what happens when a
+manifest names no pillar; `assets/design/tokens.json` is the single place a colour is decided.
 
 ```bash
-python tools/generate_banner.py ellmos-daily-life-bundle          # title and pillar from the manifest
-python tools/generate_banner.py ellmos-daily-life-bundle --check  # drift instead of writing
+python tools/generate_banner.py <bundle-id>          # title and pillar from the manifest
+python tools/generate_banner.py <bundle-id> --check  # drift instead of writing
 ```
 
 Banners are drawn here rather than projected from the source, and they are reproducible the

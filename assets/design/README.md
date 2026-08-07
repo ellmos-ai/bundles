@@ -3,8 +3,12 @@
 One banner per bundle, all of them in one visual language. This folder holds the parts that
 stay the same across the series; only the scene and the palette change with the pillar.
 
-> **Status: pilot.** One banner exists — `ellmos-daily-life-bundle`. Palette, scene and page
-> layout are up for approval before the remaining bundles follow. Nothing here is settled.
+> **Status: settled, and the series is complete.** The pilot — `ellmos-daily-life-bundle` — was
+> ratified by the owner on 2026-08-08, and with it the whole design system: the four pillar
+> palettes, the 1200 × 300 template, the quay lamp as the one warm light, the scene fragments.
+> **Tokens, template and generator are frozen from here on.** Changing any of them is a design
+> decision for the owner; the series only adds scenes and polishes over the catalogue. All 13
+> bundles have a banner today.
 
 ## The picture, and why
 
@@ -13,16 +17,35 @@ The visual language comes from the water lexicon the ecosystem already uses (see
 structure. Each of the four pillars is therefore a body of water with its own light, and each
 gets the symbol the ecosystem already assigned it.
 
-| Pillar | Water | Symbol | Scene |
-|---|---|---|---|
-| `memory` | deep water | the boat and its wake | `wake` — not drawn yet |
-| `control` | clear water | the helm | `helm` — not drawn yet |
-| `uas` | the harbour | nets and species of fish | `harbour` ✔ |
-| `domain` | freight water | cargo, crane, containers | `freight` — not drawn yet |
+| Pillar | Water | Symbol | Scene | The single accent |
+|---|---|---|---|---|
+| `memory` | deep water | the boat and its wake | `wake` ✔ | the track itself |
+| `control` | clear water | the helm | `helm` ✔ | the king spoke |
+| `uas` | the harbour | nets and species of fish | `harbour` ✔ | the quay lamp and the lit catch |
+| `domain` | freight water | cargo, crane, containers | `freight` ✔ | the one box on the hook |
 
 The harbour scene carries the UAS reading verbatim: **different nets catch different fish**,
 and the species are the end products as food — the plan, the route, the morning digest. One
 net holds the catch the light falls on; the others hang ready.
+
+The three that followed keep the same grammar — calm silhouettes, structures standing in the
+water on piles, one accent that carries the meaning rather than decorating it:
+
+- **`wake`** — the boat, bow to the right, and the track opening astern: bright where it was
+  just laid, thinner and fainter the further back it goes, with cross ribs and two buoys
+  already passed. The memory pillar reads *the memory carries, and it is the distance covered*,
+  so the accent is the track and not the boat.
+- **`helm`** — the wheel on a platform, bridge rails either side, and a straight dashed ray
+  running out to the horizon: the course you can read because the water is calm. The accent is
+  the king spoke, which by convention marks the rudder amidships. Steering means making **one**
+  course legible.
+- **`freight`** — a gantry over a laden barge, stacks already landed on the quay, and one
+  container on the hook heading for the berth left open on deck. The accent is that one box:
+  a stack is not a transfer, and only one piece moves at a time.
+
+**The quay lamp stays exclusive to `uas`.** It is the human contact point, and the only pillar
+whose accent is a warm light. The other three scenes carry no lamp and use no `url(#bnr-lamp)`;
+their accent is a marked object, not a light source.
 
 ## Files
 
@@ -61,10 +84,54 @@ The manifest supplies the display name and the pillar, so the series is a loop o
 catalogue rather than a drawing session per bundle. `--title`, `--subtitle`, `--pillar` and
 `--scene` override that for a bundle whose banner should say something else.
 
+**The whole series, and the drift check over it.** Nine of the thirteen manifests carry a
+`pillar` and need nothing but their id; the three named below carry none and are handed the
+pillar the catalogue records for them (see *When a bundle has no pillar*):
+
+```bash
+for id in $(ls manifests/bundles); do
+  case "$id" in
+    ellmos-knowledge-bundle|ellmos-media-production-bundle|ellmos-knowledge-search-choice-bundle)
+      python tools/generate_banner.py "$id" --pillar domain \
+             --inline-into "docs/preview/$id.html" ;;
+    *)
+      python tools/generate_banner.py "$id" \
+             --inline-into "docs/preview/$id.html" ;;
+  esac
+done
+```
+
+Append `--check` to the same loop to get the drift report instead of the write: it compares
+both the banner and the copy embedded in its preview page, and exits non-zero on the first
+difference. The `--pillar` arguments have to be identical in both runs — a banner drawn with
+one pillar and checked with another reports drift that is not there.
+
+## When a bundle has no pillar
+
+Three manifests carry no `pillar`, and a banner cannot be drawn without one — the generator
+refuses rather than inventing a palette. The rule is that **the pillar is looked up, never
+guessed**, and the catalogue is where it is looked up: `manifests/bundles.catalog.v1.json`
+records under `pillars.omissions` why each field is absent, and the two reasons are answered
+differently.
+
+| Case in `pillars.omissions` | Bundles | What the banner does |
+|---|---|---|
+| `approval_pinned` — the pillar is known, the field just could not be written | `ellmos-knowledge-bundle`, `ellmos-media-production-bundle` | takes the pillar the catalogue names verbatim (*intended pillar domain, not written*), because a live approval pins the manifest hash with `default_action: deny` and adding a field would silently invalidate a granted approval |
+| `hosted_and_cross_pillar` — there deliberately is none, because one value would misstate the reach | `ellmos-knowledge-search-choice-bundle` | **borrows** a palette instead of claiming a pillar: the home bundle of its `default_selection` decides it. `KnowledgeDigest` lives in `ellmos-knowledge-bundle`, so the banner runs on `domain` |
+
+Both cases are stated on the bundle page under *Säule: woher sie kommt*, and marked in the
+[index](../../docs/bundles/README.md). Nothing is silent about it: a chip reading
+`DOMAIN · FRACHTWASSER` on a bundle whose manifest names no pillar is a **borrowed label**, and
+the page says so. Should the default selection change, the palette follows it — and the pillar
+stays open, which is the honest state.
+
 ## Adding a scene for another pillar
 
-Drop `scenes/<name>.svg` next to `harbour.svg` and name it in `tokens.json` under the
-pillar's `scene`. **No change to the generator is needed** — it loads whatever fragment the
+Drop `scenes/<name>.svg` next to `harbour.svg`, under **the name `tokens.json` already gives
+that pillar's `scene`**. Since the tokens are frozen, the file name follows the tokens and not
+the other way round: `memory` is `wake`, not any other word for the same picture — otherwise
+every banner of that pillar would need a `--scene` override and the loop above would stop being
+the whole truth. **No change to the generator is needed** — it loads whatever fragment the
 tokens point at, and refuses with a readable error when the file is missing.
 
 A fragment is a plain SVG fragment (no `<svg>` wrapper, no `<defs>`), drawn on the same
@@ -79,13 +146,17 @@ Keep the left 600 px calm: the title sits there, under a veil that fades out tow
 
 Each banner comes with a page under `docs/bundles/<bundle-id>.md`, in German, structured:
 purpose retold from the manifest, the picture explained, the component table, the traffic
-light, provenance. Its preview under `docs/preview/<bundle-id>.html` is one self-contained
-file — the banner is embedded into it by the same run that draws it:
+light, provenance. Where a bundle carries a `choice_groups` entry, its candidates get a
+section of their own — that selection knowledge is the reason a recipe beats an ingredient
+list, so it is not summarised away. Its preview under `docs/preview/<bundle-id>.html` is one
+self-contained file — the banner is embedded into it by the same run that draws it:
 
 ```bash
 python tools/generate_banner.py <bundle-id> --inline-into docs/preview/<bundle-id>.html
 ```
 
-Pages are written by hand today. Whether they become generated too is a question for after
-the design is approved — generating a layout nobody has signed off on would only make the
-rework larger.
+All 13 pages exist, and [`docs/bundles/README.md`](../../docs/bundles/README.md) is the index
+over them, grouped by pillar. The prose is written by hand and says only what the manifest and
+the catalogue actually carry: where a page states a fact, the field it came from is nameable.
+Where something is missing or undecided — a skill nobody has built, a role no stack fills yet —
+the page says that too rather than rounding it up.

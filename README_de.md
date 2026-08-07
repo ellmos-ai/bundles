@@ -138,25 +138,32 @@ python tools/export_from_source.py --source <pfad-zur-quelle> --check
 
 ## Banner & Seiten
 
-**Status: Pilot.** Ein Bundle — `ellmos-daily-life-bundle` — hat einen Banner und eine Seite,
-als Designprobe. Palette, Szene und Seitenaufbau gehen erst zur Abnahme, bevor die übrigen
-folgen; was heute existiert, ist also mit Absicht eins von dreizehn und nicht dreizehn von
-dreizehn.
+**Status: Die Serie steht.** Alle 13 Bundles haben einen Banner, eine deutsche Seite und eine
+in sich geschlossene lokale Vorschau. Das Design wurde am Piloten
+(`ellmos-daily-life-bundle`) abgenommen und ist seitdem eingefroren: Paletten, Template und
+Generator bewegen sich nicht mehr, die Serie ergänzt nur noch Szenen und schleift über den
+Katalog.
+
+**→ [`docs/bundles/README.md`](docs/bundles/README.md) ist die Übersicht**, nach Säulen
+gruppiert, mit allen Bannern darin.
 
 Die Bildsprache kommt aus dem Wasser-Lexikon des Ökosystems: Jede der vier Säulen ist ein
-Gewässer mit eigenem Licht und eigenem Symbol — der Hafen für `uas`, wo verschiedene Netze
-verschiedenen Fisch fangen. `assets/design/README.md` hält die Regeln der Serie fest;
-`assets/design/tokens.json` ist der eine Ort, an dem eine Farbe entschieden wird.
+Gewässer mit eigenem Licht und eigenem Symbol.
 
-| | |
-|---|---|
-| Banner | [`assets/banners/ellmos-daily-life-bundle.svg`](assets/banners/ellmos-daily-life-bundle.svg) |
-| Seite | [`docs/bundles/ellmos-daily-life-bundle.md`](docs/bundles/ellmos-daily-life-bundle.md) |
-| Lokale Vorschau | [`docs/preview/ellmos-daily-life-bundle.html`](docs/preview/ellmos-daily-life-bundle.html) |
+| Säule | Gewässer | Das Bild |
+|---|---|---|
+| `memory` | Tiefenwasser | das Boot und die Spur, die sich achtern öffnet — das Gedächtnis trägt und ist der zurückgelegte Weg |
+| `control` | Klarwasser | das Steuerrad, eine Speiche markiert: Steuern heißt, **einen** Kurs kenntlich machen |
+| `uas` | Hafen | verschiedene Netze fangen verschiedenen Fisch; die Fischarten sind die Endprodukte, so wie man sie bekommt |
+| `domain` | Frachtwasser | Kran, Leichter, Container — bewegt wird immer nur ein Stück auf einmal |
+
+`assets/design/README.md` hält die Regeln der Serie fest, auch die für den Fall, dass ein
+Manifest keine Säule nennt; `assets/design/tokens.json` ist der eine Ort, an dem eine Farbe
+entschieden wird.
 
 ```bash
-python tools/generate_banner.py ellmos-daily-life-bundle          # Titel und Säule aus dem Manifest
-python tools/generate_banner.py ellmos-daily-life-bundle --check  # Drift melden statt schreiben
+python tools/generate_banner.py <bundle-id>          # Titel und Säule aus dem Manifest
+python tools/generate_banner.py <bundle-id> --check  # Drift melden statt schreiben
 ```
 
 Banner werden hier gezeichnet statt aus der Quelle projiziert — und sind auf dieselbe Weise
