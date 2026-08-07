@@ -1,0 +1,50 @@
+  <g id="scene-helm">
+    <g fill="{{C_HULL}}" opacity="0.9">
+      <rect x="838" y="186" width="188" height="15"/>
+      <rect x="858" y="201" width="9" height="58"/>
+      <rect x="906" y="201" width="9" height="58"/>
+      <rect x="954" y="201" width="9" height="58"/>
+      <rect x="1002" y="201" width="9" height="58"/>
+      <rect x="923" y="150" width="14" height="38"/>
+    </g>
+    <rect x="838" y="186" width="188" height="1" fill="{{C_SURFACE}}" opacity="0.3"/>
+    <g fill="{{C_HULL}}" opacity="0.72">
+      <rect x="838" y="163" width="74" height="3"/>
+      <rect x="992" y="163" width="34" height="3"/>
+      <rect x="840" y="166" width="3" height="20"/>
+      <rect x="872" y="166" width="3" height="20"/>
+      <rect x="906" y="166" width="3" height="20"/>
+      <rect x="994" y="166" width="3" height="20"/>
+      <rect x="1022" y="166" width="3" height="20"/>
+    </g>
+    <g stroke="{{C_HULL}}" stroke-linecap="round" fill="none" opacity="0.92">
+      <circle cx="930" cy="116" r="51" stroke-width="6"/>
+      <path d="M 937.1 108.9 L 981.6 64.4" stroke-width="5.4"/>
+      <path d="M 940 116 L 1003 116" stroke-width="5.4"/>
+      <path d="M 937.1 123.1 L 981.6 167.6" stroke-width="5.4"/>
+      <path d="M 930 126 L 930 189" stroke-width="5.4"/>
+      <path d="M 922.9 123.1 L 878.4 167.6" stroke-width="5.4"/>
+      <path d="M 920 116 L 857 116" stroke-width="5.4"/>
+      <path d="M 922.9 108.9 L 878.4 64.4" stroke-width="5.4"/>
+    </g>
+    <circle cx="930" cy="116" r="10" fill="{{C_HULL}}" opacity="0.92"/>
+    <path d="M 930 106 L 930 43" fill="none" stroke="{{C_ACCENT}}" stroke-width="5.4" stroke-linecap="round" stroke-opacity="0.92"/>
+    <circle cx="930" cy="36" r="4.2" fill="{{C_ACCENT}}" opacity="0.9"/>
+    <g stroke="{{C_SURFACE}}" stroke-linecap="round" stroke-opacity="0.3">
+      <path d="M 632 288 L 690 280.2" stroke-width="1.5"/>
+      <path d="M 712 277 L 764 270" stroke-width="1.5"/>
+      <path d="M 786 267 L 832 260.8" stroke-width="1.5"/>
+      <path d="M 854 258 L 894 252.6" stroke-width="1.5"/>
+      <path d="M 916 250 L 950 245.4" stroke-width="1.5"/>
+      <path d="M 972 243 L 1000 239.2" stroke-width="1.5"/>
+      <path d="M 1022 237 L 1044 234" stroke-width="1.5"/>
+      <path d="M 1066 232 L 1082 229.8" stroke-width="1.5"/>
+    </g>
+    <g stroke="{{C_SURFACE}}" stroke-linecap="round" stroke-opacity="0.14">
+      <path d="M 1090 222 h 40" stroke-width="1.4"/>
+      <path d="M 1136 246 h 30" stroke-width="1.4"/>
+      <path d="M 660 232 h 34" stroke-width="1.4"/>
+      <path d="M 1044 284 h 44" stroke-width="1.4"/>
+    </g>
+    <rect y="208" width="1200" height="92" fill="{{C_ABYSS}}" opacity="0.22"/>
+  </g>

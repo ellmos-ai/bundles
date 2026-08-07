@@ -1,0 +1,73 @@
+  <g id="scene-freight">
+    <g fill="{{C_HULL}}" opacity="0.9">
+      <rect x="988" y="176" width="212" height="18"/>
+      <rect x="1008" y="194" width="9" height="64"/>
+      <rect x="1068" y="194" width="9" height="64"/>
+      <rect x="1128" y="194" width="9" height="64"/>
+      <rect x="1188" y="194" width="9" height="64"/>
+    </g>
+    <rect x="988" y="176" width="212" height="1" fill="{{C_SURFACE}}" opacity="0.3"/>
+    <g>
+      <rect x="1052" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.9"/><rect x="1052" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1087" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.9"/><rect x="1087" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1122" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.9"/><rect x="1122" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1157" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.9"/><rect x="1157" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1052" y="145" width="32" height="15" fill="{{C_HULL}}" opacity="0.87"/><rect x="1052" y="145" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1087" y="145" width="32" height="15" fill="{{C_HULL}}" opacity="0.87"/><rect x="1087" y="145" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1122" y="145" width="32" height="15" fill="{{C_HULL}}" opacity="0.87"/><rect x="1122" y="145" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1052" y="129" width="32" height="15" fill="{{C_HULL}}" opacity="0.8400000000000001"/><rect x="1052" y="129" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1087" y="129" width="32" height="15" fill="{{C_HULL}}" opacity="0.8400000000000001"/><rect x="1087" y="129" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="996" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.88"/><rect x="996" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="1031" y="161" width="32" height="15" fill="{{C_HULL}}" opacity="0.88"/><rect x="1031" y="161" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="996" y="145" width="32" height="15" fill="{{C_HULL}}" opacity="0.85"/><rect x="996" y="145" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+    </g>
+    <g fill="{{C_HULL}}" opacity="0.9">
+      <rect x="1030" y="58" width="10" height="120"/>
+      <rect x="1160" y="58" width="10" height="120"/>
+      <rect x="878" y="54" width="322" height="9"/>
+      <rect x="1092" y="24" width="8" height="32"/>
+    </g>
+    <g stroke="{{C_HULL}}" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 1096 27 L 882 55" stroke-width="2.2"/>
+      <path d="M 1096 27 L 1196 55" stroke-width="2.2"/>
+      <path d="M 1035 63 L 1165 63" stroke-width="1.6" stroke-opacity="0.5"/>
+    </g>
+    <g fill="{{C_HULL}}" opacity="0.9">
+      <rect x="922" y="63" width="28" height="12" rx="2"/>
+      <rect x="934" y="75" width="3" height="46"/>
+      <rect x="922" y="119" width="28" height="6" rx="2"/>
+    </g>
+    <rect x="904" y="127" width="64" height="27" rx="1.5" fill="{{C_ACCENT}}" opacity="0.95"/>
+    <g stroke="{{C_ABYSS}}" stroke-opacity="0.32" stroke-width="1.4">
+      <path d="M 920 130 L 920 151"/>
+      <path d="M 936 130 L 936 151"/>
+      <path d="M 952 130 L 952 151"/>
+    </g>
+    <path d="M 686 194 L 986 194 L 972 213 L 702 213 Z" fill="{{C_HULL}}" opacity="0.92"/>
+    <g>
+      <rect x="700" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="700" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="734" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="734" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="768" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="768" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="802" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="802" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="836" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="836" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="870" y="179" width="32" height="15" fill="{{C_HULL}}" opacity="0.86"/><rect x="870" y="179" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="700" y="163" width="32" height="15" fill="{{C_HULL}}" opacity="0.82"/><rect x="700" y="163" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="734" y="163" width="32" height="15" fill="{{C_HULL}}" opacity="0.82"/><rect x="734" y="163" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="768" y="163" width="32" height="15" fill="{{C_HULL}}" opacity="0.82"/><rect x="768" y="163" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+      <rect x="802" y="163" width="32" height="15" fill="{{C_HULL}}" opacity="0.82"/><rect x="802" y="163" width="32" height="1" fill="{{C_SURFACE}}" opacity="0.16"/>
+    </g>
+    <g stroke="{{C_SURFACE}}" stroke-linecap="round" stroke-opacity="0.16">
+      <path d="M 716 224 h 66" stroke-width="1.4"/>
+      <path d="M 860 232 h 44" stroke-width="1.4"/>
+      <path d="M 1042 220 h 38" stroke-width="1.4"/>
+      <path d="M 760 262 h 52" stroke-width="1.4"/>
+      <path d="M 996 250 h 34" stroke-width="1.4"/>
+      <path d="M 1120 276 h 46" stroke-width="1.4"/>
+      <path d="M 652 240 h 28" stroke-width="1.4"/>
+    </g>
+    <g stroke="{{C_ACCENT}}" stroke-linecap="round">
+      <path d="M 908 219 h 56" stroke-width="2" stroke-opacity="0.17"/>
+      <path d="M 916 231 h 40" stroke-width="2" stroke-opacity="0.1"/>
+    </g>
+    <rect y="208" width="1200" height="92" fill="{{C_ABYSS}}" opacity="0.22"/>
+  </g>
