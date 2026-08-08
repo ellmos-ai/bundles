@@ -84,14 +84,19 @@ The manifest supplies the display name and the pillar, so the series is a loop o
 catalogue rather than a drawing session per bundle. `--title`, `--subtitle`, `--pillar` and
 `--scene` override that for a bundle whose banner should say something else.
 
-**The whole series, and the drift check over it.** Nine of the thirteen manifests carry a
-`pillar` and need nothing but their id; the three named below carry none and are handed the
-pillar the catalogue records for them (see *When a bundle has no pillar*):
+**The whole series, and the drift check over it.** Ten of the thirteen manifests carry a
+`pillar` and need nothing but their id. Two are handed the pillar the catalogue records for
+them, and one is handed a chip as well, because no single pillar would be true of it — see
+*When a bundle has no pillar*:
 
 ```bash
 for id in $(ls manifests/bundles); do
   case "$id" in
-    ellmos-knowledge-bundle|ellmos-media-production-bundle|ellmos-knowledge-search-choice-bundle)
+    ellmos-knowledge-search-choice-bundle)
+      python tools/generate_banner.py "$id" --pillar domain \
+             --chip "CHOICE · MEMORY + DOMAIN" \
+             --inline-into "docs/preview/$id.html" ;;
+    ellmos-knowledge-bundle|ellmos-media-production-bundle)
       python tools/generate_banner.py "$id" --pillar domain \
              --inline-into "docs/preview/$id.html" ;;
     *)
@@ -103,8 +108,8 @@ done
 
 Append `--check` to the same loop to get the drift report instead of the write: it compares
 both the banner and the copy embedded in its preview page, and exits non-zero on the first
-difference. The `--pillar` arguments have to be identical in both runs — a banner drawn with
-one pillar and checked with another reports drift that is not there.
+difference. The `--pillar` and `--chip` arguments have to be identical in both runs — a banner
+drawn with one and checked with another reports drift that is not there.
 
 ## When a bundle has no pillar
 
@@ -114,16 +119,42 @@ guessed**, and the catalogue is where it is looked up: `manifests/bundles.catalo
 records under `pillars.omissions` why each field is absent, and the two reasons are answered
 differently.
 
-| Case in `pillars.omissions` | Bundles | What the banner does |
-|---|---|---|
-| `approval_pinned` — the pillar is known, the field just could not be written | `ellmos-knowledge-bundle`, `ellmos-media-production-bundle` | takes the pillar the catalogue names verbatim (*intended pillar domain, not written*), because a live approval pins the manifest hash with `default_action: deny` and adding a field would silently invalidate a granted approval |
-| `hosted_and_cross_pillar` — there deliberately is none, because one value would misstate the reach | `ellmos-knowledge-search-choice-bundle` | **borrows** a palette instead of claiming a pillar: the home bundle of its `default_selection` decides it. `KnowledgeDigest` lives in `ellmos-knowledge-bundle`, so the banner runs on `domain` |
+**A single-pillar chip is allowed in exactly two cases**, and forbidden outside them:
 
-Both cases are stated on the bundle page under *Säule: woher sie kommt*, and marked in the
-[index](../../docs/bundles/README.md). Nothing is silent about it: a chip reading
-`DOMAIN · FRACHTWASSER` on a bundle whose manifest names no pillar is a **borrowed label**, and
-the page says so. Should the default selection change, the palette follows it — and the pillar
-stays open, which is the honest state.
+1. the manifest carries `pillar`, or
+2. the catalogue documents it as *intended pillar X, not written*.
+
+Anything else gets a chip that does not name one pillar. The chip is the most visible surface a
+banner has — it is read when nothing else is — so it must not assert what the source calls an
+error.
+
+| Case in `pillars.omissions` | Bundles | Chip | Palette |
+|---|---|---|---|
+| `approval_pinned` — the pillar is known, the field just could not be written | `ellmos-knowledge-bundle`, `ellmos-media-production-bundle` | the pillar the catalogue names verbatim, so `DOMAIN · FRACHTWASSER` | that pillar's |
+| `hosted_and_cross_pillar` — there deliberately is none, because one value would misstate the reach | `ellmos-knowledge-search-choice-bundle` | class and reach instead: `CHOICE · MEMORY + DOMAIN`, via `--chip` | **borrowed** from the home bundle of its `default_selection` |
+
+The first case is not a guess: the catalogue writes the pillar out and says why the field is
+absent — a live approval pins the manifest hash with `default_action: deny`, so adding a field
+would silently invalidate a granted approval. The banner reads it there.
+
+The second case is the one that needed the `--chip` flag. `ellmos-knowledge-search-choice-bundle`
+binds `knowledge.search.default`, and the catalogue states plainly that the role *spans two
+pillars: GARDENER sits in memory, KnowledgeDigest in domain. A single pillar would misstate the
+reach.* A chip saying `DOMAIN · FRACHTWASSER` would have asserted exactly that misstatement. It
+now names the class and both pillars. A **palette** is still needed — there are only four — so it
+is borrowed from where the default selection lives, and the page says the freight water is a
+colour here, not an assignment. If the default changes, the palette follows and the pillar stays
+open.
+
+**Not every choice bundle is the second case.** `ellmos-coordination-choice-bundle` carries
+`pillar: control` in its own manifest, so it falls under rule 1 and keeps
+`CONTROL · KLARWASSER` — and that holds up on inspection rather than by default: both candidates
+for `coordination.locking` are control-side, `lock-master` providing `control.locks` and
+`control.permissions`, `roshambo` relocating the same lease semantics into a database. The role
+does not leave the pillar, so naming it states nothing the sources do not.
+
+Every case is stated on the bundle page under *Säule: woher sie kommt* and marked in the
+[index](../../docs/bundles/README.md).
 
 ## Adding a scene for another pillar
 

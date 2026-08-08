@@ -1,13 +1,13 @@
 # Knowledge Search Choice Bundle
 
-![Knowledge Search Choice Bundle — Frachtwasser (Palette geliehen von domain)](../../assets/banners/ellmos-knowledge-search-choice-bundle.svg)
+![Knowledge Search Choice Bundle — Auswahlregister über memory und domain (Palette geliehen von domain)](../../assets/banners/ellmos-knowledge-search-choice-bundle.svg)
 
 > Auswahlregister für den einen, ausschließlichen Standard der Wissenssuche. Es liegt getrennt, weil seine Kandidaten in zwei verschiedenen funktionalen Bundles wohnen.
 
 | | |
 |---|---|
 | **Bundle-ID** | `ellmos-knowledge-search-choice-bundle` |
-| **Säule** | offen — Palette geliehen von `domain` |
+| **Säule** | offen — Reichweite über `memory` und `domain`; Palette geliehen von `domain` |
 | **Klasse** | `choice` — Auswahlregister, zählt **nicht** in der Deployment-Auflösung |
 | **Version** | 1.0.0 |
 | **Status / Lifecycle** | `registered` / `draft` |
@@ -25,13 +25,15 @@ Dass dieses Register überhaupt für sich steht, ist selbst die Aussage: Seine b
 
 Dieses Bundle hat **absichtlich keine Säule**, und der Katalog begründet das: Die Rolle `knowledge.search.default` *„spans two pillars: GARDENER sits in memory, KnowledgeDigest in domain. A single pillar would misstate the reach.“* Eine einzige Säule wäre hier also nicht bloß ungenau, sondern falsch.
 
-Ein Banner braucht trotzdem eine Palette. Er **leiht** sie deshalb dort, wo die Vorauswahl wohnt: `default_selection` ist `KnowledgeDigest`, registriert im Knowledge-Bundle, dessen Säule der Katalog mit `domain` angibt. Der Chip im Bild sagt darum `DOMAIN · FRACHTWASSER` — das ist eine **geliehene Beschriftung, keine Tatsache des Manifests.** Ändert sich die Vorauswahl, wechselt die Palette mit; die Säule bleibt trotzdem offen.
+Der Banner behauptet deshalb keine. Sein Chip nennt **Klasse und Reichweite** — `CHOICE · MEMORY + DOMAIN` — und gibt damit genau wieder, was im Katalog steht. Die Beschriftung ist die Fläche, auf der ein Fehler am teuersten wäre: Sie wird gelesen, wenn sonst nichts gelesen wird.
+
+Eine **Palette** braucht ein Banner trotzdem, und es gibt nur vier. Sie ist deshalb geliehen, und zwar dort, wo die Vorauswahl wohnt: `default_selection` ist `KnowledgeDigest`, registriert im Knowledge-Bundle, dessen Säule der Katalog mit `domain` angibt. Das Frachtwasser ist hier also eine Farbe, keine Zuordnung — ändert sich die Vorauswahl, wechselt die Palette mit, und die Säule bleibt offen.
 
 ## Das Bild: Frachtwasser
 
 Das Frachtwasser ist die Domain-Säule: das Fachgut als Ladung — umgeschlagen, gestapelt, transportiert. Ein Kran hebt genau **ein** Stück Fracht, und dieses eine ist der Akzent des Bildes; an Land liegt, was schon gelöscht ist, auf dem Leichter, was noch fährt. Bewegt wird immer nur ein Stück auf einmal — das ist der Unterschied zwischen einem Stapel und einem Umschlag.
 
-Für dieses Register ist das Bild **geliehen**, nicht zugeordnet — der Abschnitt *Säule: woher sie kommt* oben sagt, von wem und warum.
+Für dieses Register ist das Bild **geliehen**, nicht zugeordnet: Die Farben kommen aus dem Frachtwasser, die Beschriftung nennt trotzdem beide Säulen. Der Abschnitt *Säule: woher sie kommt* oben sagt, warum das kein Widerspruch ist.
 
 ## Komponenten
 
@@ -76,7 +78,7 @@ Grün-fähig heißt nicht veröffentlicht. Die Freigabe einer Welle ist eine aus
 
 Der `content_hash` läuft über das Manifest ohne das Hash-Feld selbst — er ist an Ort und Stelle nachrechenbar, ohne Zusatzdatei.
 
-Das Manifest wird **nicht hier gepflegt**, sondern aus der privaten Kompositionsquelle projiziert (`tools/export_from_source.py`). Der Banner dagegen entsteht in diesem Repo, aus `assets/design/` heraus: `python tools/generate_banner.py ellmos-knowledge-search-choice-bundle --pillar domain`. `--check` statt Schreiben meldet Abweichung.
+Das Manifest wird **nicht hier gepflegt**, sondern aus der privaten Kompositionsquelle projiziert (`tools/export_from_source.py`). Der Banner dagegen entsteht in diesem Repo, aus `assets/design/` heraus: `python tools/generate_banner.py ellmos-knowledge-search-choice-bundle --pillar domain --chip "CHOICE · MEMORY + DOMAIN"`. `--check` statt Schreiben meldet Abweichung.
 
 ---
 

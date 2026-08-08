@@ -66,12 +66,14 @@ Feld würde sie entwerten. Der Banner nimmt die belegte Säule, die Bundle-Seite
 
 | Banner | Bundle | Klasse | Komponenten | Ring |
 |---|---|---|---|---|
-| [<img src="../../assets/banners/ellmos-knowledge-search-choice-bundle.svg" width="330" alt="Knowledge Search Choice Bundle — Palette geliehen von domain">](ellmos-knowledge-search-choice-bundle.md) | **[Knowledge Search Choice Bundle](ellmos-knowledge-search-choice-bundle.md)**<br>`ellmos-knowledge-search-choice-bundle`<br>Auswahlregister: der Standard der Wissenssuche<br>Palette **geliehen** von `domain` ² | `choice` | 1 | 2 |
+| [<img src="../../assets/banners/ellmos-knowledge-search-choice-bundle.svg" width="330" alt="Knowledge Search Choice Bundle — Auswahlregister über memory und domain">](ellmos-knowledge-search-choice-bundle.md) | **[Knowledge Search Choice Bundle](ellmos-knowledge-search-choice-bundle.md)**<br>`ellmos-knowledge-search-choice-bundle`<br>Auswahlregister: der Standard der Wissenssuche<br>Reichweite `memory` + `domain` ² | `choice` | 1 | 2 |
 
 ² Der Katalog vermerkt ausdrücklich, dass die Rolle `knowledge.search.default` zwei Säulen
-überspannt und eine einzelne die Reichweite falsch darstellen würde. Der Banner leiht die Palette
-dort, wo die Vorauswahl registriert ist. Der Chip im Bild ist damit eine geliehene Beschriftung,
-keine Tatsache des Manifests.
+überspannt — GARDENER sitzt in `memory`, KnowledgeDigest in `domain` — und dass eine einzelne die
+Reichweite falsch darstellen würde. Der Banner nennt deshalb keine Säule, sondern Klasse und
+Reichweite (`CHOICE · MEMORY + DOMAIN`). Nur die **Farben** sind geliehen, und zwar von dem
+Bundle, in dem die Vorauswahl registriert ist: Das Frachtwasser ist hier eine Palette, keine
+Zuordnung.
 
 ---
 
