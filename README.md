@@ -103,14 +103,31 @@ process anticipates it.
 
 ## Release conditions
 
-This repository carries a conditional publication gate (`PRIVATE.txt`, committed on purpose so
-the gate is visible where visibility is switched). A wave is released when all three are met:
+A wave is released when all three of these are met:
 
 1. **Branding package complete** — repository cut, banner, how bundles appear on the organisation
    profile.
 2. **Publication check passed** — law, privacy and licensing reviewed for the wave, no blockers.
 3. **User click for this wave** — each wave is released on an explicit decision, and a released
    wave says nothing about the next one.
+
+### Released so far
+
+**Waves 1 and 2 — 2026-08-08, all thirteen bundles currently in this repository.**
+
+| Condition | How it was met |
+|---|---|
+| 1 Branding | Banner, German page and self-contained preview exist for every bundle, plus an index over all thirteen; the design was reviewed and frozen by the owner on 2026-08-08. |
+| 2 Publication check | `repo-publish-check` run over the full repository — every tracked file *and* the complete commit history scanned for credentials, local paths and hostnames; no blockers. Licence: MIT. |
+| 3 User click | Explicit owner decision on 2026-08-08, covering waves 1 and 2 together (wave 2 had been gated only on a privacy fix, which was closed at source beforehand). |
+
+The gate file `PRIVATE.txt` was removed in the same step — it existed to prevent an accidental
+publication, and that risk ends where the repository becomes public.
+
+**What still applies to later waves.** Condition 3 does not carry over: new recipes are not added
+because the last wave went well. Each further wave is checked again under condition 2 **before it
+is committed** — in a public repository the commit *is* the publication, so the check moves ahead
+of it rather than ahead of a visibility switch.
 
 ## How these files got here
 

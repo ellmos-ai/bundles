@@ -105,9 +105,7 @@ Prozess nimmt das vorweg.
 
 ## Freigabebedingungen
 
-Dieses Repository trägt ein bedingtes Publikations-Gate (`PRIVATE.txt`, bewusst committet, damit
-das Gate dort sichtbar ist, wo Sichtbarkeit geschaltet wird). Eine Welle wird freigegeben, wenn
-alle drei Bedingungen erfüllt sind:
+Eine Welle wird freigegeben, wenn alle drei Bedingungen erfüllt sind:
 
 1. **Branding-Paket fertig** — Repo-Schnitt, Banner, Auftritt der Bundles auf dem
    Organisationsprofil.
@@ -115,6 +113,25 @@ alle drei Bedingungen erfüllt sind:
    Blocker.
 3. **User-Klick für diese Welle** — jede Welle wird einzeln freigegeben; eine gelungene Welle sagt
    nichts über die nächste.
+
+### Bisher freigegeben
+
+**Wellen 1 und 2 — 2026-08-08, alle dreizehn derzeit hier liegenden Bundles.**
+
+| Bedingung | Wie sie erfüllt wurde |
+|---|---|
+| 1 Branding | Banner, deutsche Seite und eigenständige Vorschau für jedes Bundle, dazu ein Index über alle dreizehn; das Design wurde am 2026-08-08 vom Eigentümer abgenommen und eingefroren. |
+| 2 Publikationsprüfung | `repo-publish-check` über das gesamte Repository — jede getrackte Datei **und** die vollständige Commit-Historie auf Zugangsdaten, lokale Pfade und Hostnamen geprüft; keine Blocker. Lizenz: MIT. |
+| 3 User-Klick | Ausdrückliche Entscheidung des Eigentümers am 2026-08-08 für Welle 1 und 2 gemeinsam (Welle 2 hing nur an einem Privacy-Fix, der zuvor an der Quelle geschlossen wurde). |
+
+Die Gate-Datei `PRIVATE.txt` wurde im selben Schritt entfernt — sie existierte, um eine
+versehentliche Veröffentlichung zu verhindern, und dieses Risiko endet dort, wo das Repository
+öffentlich wird.
+
+**Was für spätere Wellen weiter gilt.** Bedingung 3 überträgt sich nicht: Neue Rezepte kommen nicht
+hinzu, weil die letzte Welle gut lief. Jede weitere Welle wird erneut nach Bedingung 2 geprüft —
+und zwar **bevor sie committet wird**, denn in einem öffentlichen Repository *ist* der Commit die
+Veröffentlichung; die Prüfung rückt damit vor den Commit statt vor einen Sichtbarkeitsschalter.
 
 ## Wie diese Dateien hierher kommen
 
