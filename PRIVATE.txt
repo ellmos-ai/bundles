@@ -34,9 +34,21 @@ RELEASE CONDITIONS (all three must be demonstrably met, per wave)
    The publication gate skill has been run over the wave being released - law,
    privacy, licence - and reports no blockers.
    LICENCE SUB-CONDITION: MET on 2026-08-08 - the user chose MIT, and LICENSE
-   (MIT, Copyright 2026 Lukas Geiger) is committed here. The law and privacy
-   parts of this condition are still OPEN per wave: the check itself has not
-   been run for any wave.
+   (MIT, Copyright 2026 Lukas Geiger) is committed here.
+   LAW AND PRIVACY SUB-CONDITIONS: MET on 2026-08-08 - /repo-publish-check run
+   over the full repository (Gates 1-9 of the full-mode checklist): committed
+   tree checked file by file against git ls-files, privacy scan run over every
+   tracked file AND the full commit history (git grep for emails, local paths,
+   hostnames, tokens/secrets/credentials - none found beyond the owner's own
+   copyright attribution and git author identity, which is not a leak), the
+   export tool verified to name the private source only generically ("private
+   composition repository") and to carry no hardcoded machine paths, and all
+   13 banners verified reproducible (--check clean against the committed
+   assets). No blockers found. Two small gaps closed in the same pass:
+   `llms.txt` added, and the licence section now states its scope explicitly.
+   This condition is MET for the repository as it stands today; a future wave
+   with new content is checked again before it is released, per wave as
+   condition 3 already requires.
 
 3. USER CLICK FOR THIS WAVE
    Each wave is released on an explicit decision by the user. Waves are not
@@ -68,3 +80,9 @@ HISTORY
             never existed for a moment without its gate. [C]
 2026-08-08  licence chosen by the user: MIT. LICENSE added; the licence part of
             condition 2 marked met, the law and privacy parts left open. [C]
+2026-08-08  /repo-publish-check run over the full repository on the user's
+            instruction (OP-PUBCHECK). No blockers found; llms.txt added and
+            the licence section made explicit as part of the same pass.
+            Condition 2's law and privacy parts marked MET. Conditions 1 and 3
+            are untouched by this entry - branding is judged elsewhere, and
+            the user's per-wave click is not something a check can satisfy. [C]

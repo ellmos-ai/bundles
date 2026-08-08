@@ -1,0 +1,72 @@
+## Last-checked: 2026-08-08
+
+# bundles
+
+Canonical repository: https://github.com/ellmos-ai/bundles
+
+## Status
+
+**Private build, not yet public.** This repository opens wave by wave, on an
+explicit decision by the owner for each wave — see `PRIVATE.txt` and the
+"Release conditions" section of `README.md`. Nothing here is secret in
+content; the gate governs *when* it becomes visible, not *whether* it is fit
+to be. Editing is allowed; publication is not, until a wave's three
+conditions are met.
+
+## Summary
+
+`bundles` is the recipe layer of the ellmos ecosystem: bundle manifests, a
+catalogue excerpt, and the export tool that projects them out of a private
+composition repository. A bundle manifest is a recipe — the ingredient list
+(components, all public on their own) plus the seed (which parts belong
+together, which role each fills, which alternative was chosen and why). The
+manifests are not maintained here; they are reproducibly projected from the
+private source, and every file carries a `content_hash` that makes the
+projection verifiable rather than merely asserted.
+
+## Audience
+
+- Readers of the ellmos ecosystem who want to see how its components compose
+  into working units, not just that the components exist.
+- Anyone deciding whether a given set of skills, agent roles and access
+  surfaces adds up to something coherent before deploying it.
+- Maintainers of the sibling repository `open-ocean` (the runtime that will
+  eventually consume these recipes) and of the source composition repository.
+
+## Important Files
+
+- `README.md` — English overview: what a bundle is, the two rings, the
+  release conditions, how the projection works.
+- `README_de.md` — German counterpart, kept in 1:1 parity.
+- `PRIVATE.txt` — the publication gate: three conditions, checkable, none met
+  by assertion alone.
+- `manifests/bundles.catalog.v1.json` — the machine-readable index of all
+  exported bundles.
+- `manifests/bundles/<bundle-id>/bundle.v1.json` — one manifest per bundle.
+- `contracts/` — the two contracts every bundle manifest is checked against.
+- `docs/bundles/README.md` — the human-readable index, grouped by pillar,
+  with every banner.
+- `docs/bundles/<bundle-id>.md` — one page per bundle, in German.
+- `tools/export_from_source.py` — the reproducible projection tool.
+- `tools/generate_banner.py` — the banner generator (frozen design system).
+
+## Search Phrases
+
+```text
+ellmos bundle manifest recipe seed ingredient list
+bundle catalogue composition knowledge choice groups
+ellmos-ai bundles recipe layer open-ocean
+reproducible export projection content_hash verification
+which components form a working ellmos deployment
+```
+
+## Boundaries
+
+`bundles` is not a runtime and starts nothing on its own — a recipe is
+executed by an agent CLI the reader already runs, not by this repository.
+The full consuming system is `open-ocean`, a separate repository, kept apart
+so that a recipe available today never implies a system that is not built
+yet. Bundles whose components are not all public are deliberately absent
+rather than shipped with their alternatives trimmed away. This index
+describes the 13 bundles currently in the projection; it is not the full
+catalogue the private source repository holds.

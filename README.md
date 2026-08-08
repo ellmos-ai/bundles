@@ -8,6 +8,10 @@ knowledge.
 > **Private build.** This repository opens **wave by wave**, not all at once. Its release
 > conditions are written down and checkable — see *[Release conditions](#release-conditions)*.
 
+> [!NOTE]
+> **AI / LLM Integration**: For machine-readable context and LLM search terms, see
+> [`llms.txt`](./llms.txt).
+
 ---
 
 ## Read this first: what a bundle is, and what it is not
@@ -167,5 +171,8 @@ no network references.
 
 ## Licence
 
-MIT, chosen by the owner on 2026-08-08 and committed as [`LICENSE`](LICENSE). That settles the
-licence part of the publication check; its law and privacy parts stay open, per wave.
+MIT, chosen by the owner on 2026-08-08 and committed as [`LICENSE`](LICENSE). It covers
+everything in this repository — manifests, contracts, documentation and tools alike; there is no
+third-party code here to license separately, since both scripts under `tools/` use only the Python
+standard library. That settles the licence part of the publication check; its law and privacy
+parts stay open, per wave.

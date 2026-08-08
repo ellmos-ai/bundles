@@ -8,6 +8,10 @@ Die Rezept-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompos
 > Die Bedingungen dafür stehen geschrieben und sind prüfbar — siehe
 > *[Freigabebedingungen](#freigabebedingungen)*.
 
+> [!NOTE]
+> **KI / LLM Integration**: Maschinenlesbare Kontexte und LLM-Suchbegriffe finden sich in
+> [`llms.txt`](./llms.txt).
+
 ---
 
 ## Zuerst lesen: was ein Bundle ist und was nicht
@@ -173,5 +177,8 @@ SVG: keine externen Schriften, keine Rastergrafiken, keine Netzverweise.
 
 ## Lizenz
 
-MIT, am 2026-08-08 vom Eigentümer gewählt und als [`LICENSE`](LICENSE) committet. Damit ist der
-Lizenzteil der Publikationsprüfung erledigt; deren Rechts- und Privacy-Teil bleibt offen, je Welle.
+MIT, am 2026-08-08 vom Eigentümer gewählt und als [`LICENSE`](LICENSE) committet. Sie erfasst
+alles in diesem Repository — Manifeste, Contracts, Dokumentation und Tools gleichermaßen; separat
+zu lizenzierenden Fremdcode gibt es nicht, da beide Skripte unter `tools/` ausschließlich die
+Python-Standardbibliothek nutzen. Damit ist der Lizenzteil der Publikationsprüfung erledigt; deren
+Rechts- und Privacy-Teil bleibt offen, je Welle.
