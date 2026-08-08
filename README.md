@@ -146,6 +146,46 @@ any more, the series only adds scenes and polishes over the catalogue.
 **→ [`docs/bundles/README.md`](docs/bundles/README.md) is the index**, grouped by pillar, with
 every banner in it.
 
+### The series at a glance
+
+**Deep water — `memory`**
+
+<p>
+  <a href="docs/bundles/ellmos-working-memory-bundle.md"><img src="assets/banners/ellmos-working-memory-bundle.svg" width="404" alt="Working Memory Bundle — deep water"></a>
+  <a href="docs/bundles/ellmos-memory-human-context-bundle.md"><img src="assets/banners/ellmos-memory-human-context-bundle.svg" width="404" alt="Memory Human Context Bundle — deep water"></a>
+</p>
+
+**Clear water — `control`**
+
+<p>
+  <a href="docs/bundles/ellmos-agents-bundle.md"><img src="assets/banners/ellmos-agents-bundle.svg" width="404" alt="Agents Bundle — clear water"></a>
+  <a href="docs/bundles/ellmos-coordination-choice-bundle.md"><img src="assets/banners/ellmos-coordination-choice-bundle.svg" width="404" alt="Coordination Choice Bundle — clear water"></a>
+</p>
+
+**The harbour — `uas`**
+
+<p>
+  <a href="docs/bundles/ellmos-daily-life-bundle.md"><img src="assets/banners/ellmos-daily-life-bundle.svg" width="404" alt="Daily Life Bundle — the harbour"></a>
+  <a href="docs/bundles/ellmos-voice-media-assist-bundle.md"><img src="assets/banners/ellmos-voice-media-assist-bundle.svg" width="404" alt="Voice and Media Assist Bundle — the harbour"></a>
+  <a href="docs/bundles/ellmos-health-assist-bundle.md"><img src="assets/banners/ellmos-health-assist-bundle.svg" width="404" alt="Health Assist Bundle — the harbour"></a>
+  <a href="docs/bundles/ellmos-briefing-bundle.md"><img src="assets/banners/ellmos-briefing-bundle.svg" width="404" alt="Briefing Bundle — the harbour"></a>
+  <a href="docs/bundles/ellmos-finance-assist-bundle.md"><img src="assets/banners/ellmos-finance-assist-bundle.svg" width="404" alt="Finance Assist Bundle — the harbour"></a>
+</p>
+
+**Freight water — `domain`**
+
+<p>
+  <a href="docs/bundles/ellmos-doc-handler-bundle.md"><img src="assets/banners/ellmos-doc-handler-bundle.svg" width="404" alt="Document Handler Bundle — freight water"></a>
+  <a href="docs/bundles/ellmos-knowledge-bundle.md"><img src="assets/banners/ellmos-knowledge-bundle.svg" width="404" alt="Knowledge Bundle — freight water, pillar derived"></a>
+  <a href="docs/bundles/ellmos-media-production-bundle.md"><img src="assets/banners/ellmos-media-production-bundle.svg" width="404" alt="Media Production Bundle — freight water, pillar derived"></a>
+</p>
+
+**Across two pillars**
+
+<p>
+  <a href="docs/bundles/ellmos-knowledge-search-choice-bundle.md"><img src="assets/banners/ellmos-knowledge-search-choice-bundle.svg" width="404" alt="Knowledge Search Choice Bundle — choice register across memory and domain"></a>
+</p>
+
 The visual language comes from the ecosystem's water lexicon: each of the four pillars is a
 body of water with its own light and its own symbol.
 

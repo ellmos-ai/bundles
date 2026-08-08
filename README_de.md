@@ -151,6 +151,46 @@ Katalog.
 **→ [`docs/bundles/README.md`](docs/bundles/README.md) ist die Übersicht**, nach Säulen
 gruppiert, mit allen Bannern darin.
 
+### Die Serie auf einen Blick
+
+**Tiefenwasser — `memory`**
+
+<p>
+  <a href="docs/bundles/ellmos-working-memory-bundle.md"><img src="assets/banners/ellmos-working-memory-bundle.svg" width="404" alt="Working Memory Bundle — Tiefenwasser"></a>
+  <a href="docs/bundles/ellmos-memory-human-context-bundle.md"><img src="assets/banners/ellmos-memory-human-context-bundle.svg" width="404" alt="Memory Human Context Bundle — Tiefenwasser"></a>
+</p>
+
+**Klarwasser — `control`**
+
+<p>
+  <a href="docs/bundles/ellmos-agents-bundle.md"><img src="assets/banners/ellmos-agents-bundle.svg" width="404" alt="Agents Bundle — Klarwasser"></a>
+  <a href="docs/bundles/ellmos-coordination-choice-bundle.md"><img src="assets/banners/ellmos-coordination-choice-bundle.svg" width="404" alt="Coordination Choice Bundle — Klarwasser"></a>
+</p>
+
+**Hafen — `uas`**
+
+<p>
+  <a href="docs/bundles/ellmos-daily-life-bundle.md"><img src="assets/banners/ellmos-daily-life-bundle.svg" width="404" alt="Daily Life Bundle — Hafen"></a>
+  <a href="docs/bundles/ellmos-voice-media-assist-bundle.md"><img src="assets/banners/ellmos-voice-media-assist-bundle.svg" width="404" alt="Voice and Media Assist Bundle — Hafen"></a>
+  <a href="docs/bundles/ellmos-health-assist-bundle.md"><img src="assets/banners/ellmos-health-assist-bundle.svg" width="404" alt="Health Assist Bundle — Hafen"></a>
+  <a href="docs/bundles/ellmos-briefing-bundle.md"><img src="assets/banners/ellmos-briefing-bundle.svg" width="404" alt="Briefing Bundle — Hafen"></a>
+  <a href="docs/bundles/ellmos-finance-assist-bundle.md"><img src="assets/banners/ellmos-finance-assist-bundle.svg" width="404" alt="Finance Assist Bundle — Hafen"></a>
+</p>
+
+**Frachtwasser — `domain`**
+
+<p>
+  <a href="docs/bundles/ellmos-doc-handler-bundle.md"><img src="assets/banners/ellmos-doc-handler-bundle.svg" width="404" alt="Document Handler Bundle — Frachtwasser"></a>
+  <a href="docs/bundles/ellmos-knowledge-bundle.md"><img src="assets/banners/ellmos-knowledge-bundle.svg" width="404" alt="Knowledge Bundle — Frachtwasser, Säule abgeleitet"></a>
+  <a href="docs/bundles/ellmos-media-production-bundle.md"><img src="assets/banners/ellmos-media-production-bundle.svg" width="404" alt="Media Production Bundle — Frachtwasser, Säule abgeleitet"></a>
+</p>
+
+**Über zwei Säulen**
+
+<p>
+  <a href="docs/bundles/ellmos-knowledge-search-choice-bundle.md"><img src="assets/banners/ellmos-knowledge-search-choice-bundle.svg" width="404" alt="Knowledge Search Choice Bundle — Auswahlregister über memory und domain"></a>
+</p>
+
 Die Bildsprache kommt aus dem Wasser-Lexikon des Ökosystems: Jede der vier Säulen ist ein
 Gewässer mit eigenem Licht und eigenem Symbol.
 
