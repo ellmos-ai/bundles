@@ -110,7 +110,7 @@ def load_manifest(bundle_id: str) -> dict[str, Any]:
 
 
 def build(bundle_id: str, pillar: str | None, scene: str | None,
-          title: str | None, subtitle: str | None) -> str:
+          title: str | None, subtitle: str | None, chip: str | None = None) -> str:
     tokens = read_json(TOKENS_PATH)
     manifest: dict[str, Any] = {}
     if pillar is None or title is None:
@@ -139,7 +139,15 @@ def build(bundle_id: str, pillar: str | None, scene: str | None,
 
     title = title or manifest.get("display_name") or bundle_id
     subtitle = subtitle if subtitle is not None else bundle_id
-    chip = f"{pillar.upper()} · {spec['label'].upper()}"
+
+    # The chip normally names the pillar, because normally the pillar is the truth about a
+    # bundle. It is overridable for the one case where it is not: a bundle whose reach spans
+    # two pillars still needs a palette to be drawn in, but must not carry a single pillar's
+    # name on the most visible surface it has. The palette is then borrowed and said to be
+    # borrowed; the chip says what the catalogue says instead.
+    borrowed = chip is not None
+    chip = chip or f"{pillar.upper()} · {spec['label'].upper()}"
+    aria = f"{title} — {chip}" if borrowed else f"{title} — {spec['label']} ({pillar} pillar)"
 
     canvas = tokens["canvas"]
     typo = tokens["typography"]
@@ -180,7 +188,7 @@ def build(bundle_id: str, pillar: str | None, scene: str | None,
         "TITLE": xml_escape(title),
         "SUBTITLE": xml_escape(subtitle),
         "PILLAR_CHIP": xml_escape(chip),
-        "ARIA": xml_escape(f"{title} — {spec['label']} ({pillar} pillar)"),
+        "ARIA": xml_escape(aria),
         "SCENE": scene_svg,
     }
 
@@ -224,6 +232,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--scene", help="override the pillar's default scene fragment")
     parser.add_argument("--title", help="override the display name from the manifest")
     parser.add_argument("--subtitle", help="override the mono line under the title")
+    parser.add_argument(
+        "--chip",
+        help="override the pillar chip, for a bundle whose reach is not a single pillar",
+    )
     parser.add_argument("--out", type=Path, help="output path (default assets/banners/<id>.svg)")
     parser.add_argument(
         "--inline-into",
@@ -238,7 +250,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        svg = build(args.bundle_id, args.pillar, args.scene, args.title, args.subtitle)
+        svg = build(args.bundle_id, args.pillar, args.scene, args.title, args.subtitle,
+                    args.chip)
     except BannerError as error:
         print(f"error: {error}", file=sys.stderr)
         return 2

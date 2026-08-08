@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Knowledge Search Choice Bundle — Frachtwasser (domain pillar)">
-  <title>Knowledge Search Choice Bundle — Frachtwasser (domain pillar)</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Knowledge Search Choice Bundle — CHOICE · MEMORY + DOMAIN">
+  <title>Knowledge Search Choice Bundle — CHOICE · MEMORY + DOMAIN</title>
   <defs>
     <!-- Sky and water meet at the waterline in the same colour, so the horizon is
          drawn by the hairline below and never by a seam between two rectangles. -->
@@ -104,8 +104,8 @@
   <rect width="760" height="300" fill="url(#bnr-veil)"/>
 
   <g transform="translate(72 0)">
-    <rect x="0" y="88" width="216.5" height="26" rx="13" fill="none" stroke="#d98247" stroke-opacity="0.5"/>
-    <text x="15" y="105.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="11" letter-spacing="1.7" fill="#d98247" fill-opacity="0.92">DOMAIN · FRACHTWASSER</text>
+    <rect x="0" y="88" width="243.3" height="26" rx="13" fill="none" stroke="#d98247" stroke-opacity="0.5"/>
+    <text x="15" y="105.5" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="11" letter-spacing="1.7" fill="#d98247" fill-opacity="0.92">CHOICE · MEMORY + DOMAIN</text>
     <text x="-2" y="171" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif" font-size="31" font-weight="600" letter-spacing="-0.6" fill="#eef2f4">Knowledge Search Choice Bundle</text>
     <text x="0" y="201" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="0.5" fill="#92a8b3">ellmos-knowledge-search-choice-bundle</text>
   </g>
