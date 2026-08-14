@@ -1,3 +1,5 @@
+<img src="assets/banner.png" width="100%" alt="bundles Banner">
+
 # bundles
 
 Die Rezept-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompositionswissen.

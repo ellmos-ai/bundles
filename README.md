@@ -1,3 +1,5 @@
+<img src="assets/banner.png" width="100%" alt="bundles Banner">
+
 # bundles
 
 The recipe layer of the ellmos ecosystem: bundle manifests, catalogues, and composition
