@@ -1,4 +1,4 @@
-## Last-checked: 2026-08-08
+## Last-checked: 2026-08-20
 
 # bundles
 
@@ -6,12 +6,11 @@ Canonical repository: https://github.com/ellmos-ai/bundles
 
 ## Status
 
-**Private build, not yet public.** This repository opens wave by wave, on an
-explicit decision by the owner for each wave — see `PRIVATE.txt` and the
-"Release conditions" section of `README.md`. Nothing here is secret in
-content; the gate governs *when* it becomes visible, not *whether* it is fit
-to be. Editing is allowed; publication is not, until a wave's three
-conditions are met.
+**Public repository.** Waves 1 and 2, containing the thirteen bundles in this
+projection, were released on 2026-08-08 after their publication check and an
+explicit owner decision. Future waves remain independently gated: a recipe is
+added only after its wave's branding, publication check and explicit owner
+decision meet the three release conditions in `README.md`.
 
 ## Summary
 
@@ -38,8 +37,8 @@ projection verifiable rather than merely asserted.
 - `README.md` — English overview: what a bundle is, the two rings, the
   release conditions, how the projection works.
 - `README_de.md` — German counterpart, kept in 1:1 parity.
-- `PRIVATE.txt` — the publication gate: three conditions, checkable, none met
-  by assertion alone.
+- `README.md` — the release conditions, including the independently checkable
+  gate for each future wave.
 - `manifests/bundles.catalog.v1.json` — the machine-readable index of all
   exported bundles.
 - `manifests/bundles/<bundle-id>/bundle.v1.json` — one manifest per bundle.
