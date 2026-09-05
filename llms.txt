@@ -1,4 +1,4 @@
-## Last-checked: 2026-08-20
+## Last-checked: 2026-09-05
 
 # bundles
 
@@ -20,8 +20,10 @@ composition repository. A bundle manifest is a recipe — the ingredient list
 (components, all public on their own) plus the seed (which parts belong
 together, which role each fills, which alternative was chosen and why). The
 manifests are not maintained here; they are reproducibly projected from the
-private source, and every file carries a `content_hash` that makes the
-projection verifiable rather than merely asserted.
+private source. The 17 manifest-like JSON artefacts (bundle manifests,
+catalogue, contracts and export receipt) carry a `content_hash` over their
+canonical JSON content with that field omitted. The design-token JSON,
+Markdown, SVG, PNG and Python files do not make that field-level guarantee.
 
 ## Audience
 
@@ -35,10 +37,8 @@ projection verifiable rather than merely asserted.
 ## Important Files
 
 - `README.md` — English overview: what a bundle is, the two rings, the
-  release conditions, how the projection works.
+  release conditions and how the projection works.
 - `README_de.md` — German counterpart, kept in 1:1 parity.
-- `README.md` — the release conditions, including the independently checkable
-  gate for each future wave.
 - `manifests/bundles.catalog.v1.json` — the machine-readable index of all
   exported bundles.
 - `manifests/bundles/<bundle-id>/bundle.v1.json` — one manifest per bundle.

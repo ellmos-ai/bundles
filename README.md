@@ -7,8 +7,9 @@ knowledge.
 
 *[Deutsch](README_de.md)*
 
-> **Private build.** This repository opens **wave by wave**, not all at once. Its release
-> conditions are written down and checkable — see *[Release conditions](#release-conditions)*.
+> **Public release — Waves 1 and 2.** All thirteen bundles currently in this repository were
+> released on 2026-08-08 after their publication check and an explicit owner decision. Later
+> waves remain individually gated — see *[Release conditions](#release-conditions)*.
 
 > [!NOTE]
 > **AI / LLM Integration**: For machine-readable context and LLM search terms, see

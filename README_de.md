@@ -6,8 +6,9 @@ Die Rezept-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompos
 
 *[English](README.md)*
 
-> **Privater Aufbau.** Dieses Repository öffnet sich **Welle für Welle**, nicht auf einen Schlag.
-> Die Bedingungen dafür stehen geschrieben und sind prüfbar — siehe
+> **Öffentlich freigegeben — Wellen 1 und 2.** Alle dreizehn derzeit in diesem Repository
+> enthaltenen Bundles wurden am 2026-08-08 nach ihrer Publikationsprüfung und einer ausdrücklichen
+> Entscheidung des Eigentümers veröffentlicht. Spätere Wellen bleiben einzeln gegatet — siehe
 > *[Freigabebedingungen](#freigabebedingungen)*.
 
 > [!NOTE]
