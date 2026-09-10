@@ -5,6 +5,15 @@
 The recipe layer of the ellmos ecosystem: bundle manifests, catalogues, and composition
 knowledge.
 
+[![CI](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml/badge.svg)](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Bundles: 13](https://img.shields.io/badge/bundles-13%20manifests-informational.svg)](manifests/bundles.catalog.v1.json)
+[![Schema: v1](https://img.shields.io/badge/schema-ellmos.bundle.v1-blueviolet.svg)](contracts/bundle-family-contract.v1.json)
+[![Status: Public Release](https://img.shields.io/badge/status-public%20release-success.svg)](README.md#read-this-first-what-a-bundle-is-and-what-it-is-not)
+[![llms.txt](https://img.shields.io/badge/llms.txt-ready-blue.svg)](llms.txt)
+[![Ecosystem: ellmos-ai](https://img.shields.io/badge/ecosystem-ellmos--ai-orange.svg)](https://github.com/ellmos-ai)
+
 *[Deutsch](README_de.md)*
 
 > **Public release — Waves 1 and 2.** All thirteen bundles currently in this repository were

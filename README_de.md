@@ -4,6 +4,15 @@
 
 Die Rezept-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompositionswissen.
 
+[![CI](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml/badge.svg)](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-green.svg)](LICENSE)
+[![Bundles: 13](https://img.shields.io/badge/Bundles-13%20Manifeste-informational.svg)](manifests/bundles.catalog.v1.json)
+[![Schema: v1](https://img.shields.io/badge/Schema-ellmos.bundle.v1-blueviolet.svg)](contracts/bundle-family-contract.v1.json)
+[![Status: Öffentliche Freigabe](https://img.shields.io/badge/Status-%C3%96ffentliche%20Freigabe-success.svg)](README_de.md#zuerst-lesen-was-ein-bundle-ist-und-was-nicht)
+[![llms.txt](https://img.shields.io/badge/llms.txt-bereit-blue.svg)](llms.txt)
+[![Ökosystem: ellmos-ai](https://img.shields.io/badge/%C3%96kosystem-ellmos--ai-orange.svg)](https://github.com/ellmos-ai)
+
 *[English](README.md)*
 
 > **Öffentlich freigegeben — Wellen 1 und 2.** Alle dreizehn derzeit in diesem Repository

@@ -2,17 +2,44 @@
 # the publication gate belongs at the remote, where visibility is switched.
 # Only folders without a repository keep purely local markers.
 
-# Local locks
+# Local & Multi-Agent Locks
+LOCK
+LOCK.*
+*.lock
 LOCK.txt
 LOCK.*.txt
+LOCK.permissions.json
 
-# Python
+# Multi-Host Sync Conflicts
+*-conflict-*
+*-ASUS-GEI.*
+*-WORKSTATION-LG.*
+
+# Python caches and bytecode
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
 .venv/
 venv/
+ENV/
+env/
 
-# OS / editor
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# OS / Editor artefacts
 .DS_Store
 Thumbs.db
 *.swp
+*.swo
+.vscode/
+.idea/
