@@ -18,7 +18,7 @@ def test_pep621_pyproject_metadata() -> None:
     project = data["project"]
 
     assert project["name"] == "ellmos-bundles"
-    assert project["version"] == "1.0.0"
+    assert project["version"] == "1.0.2"
     assert project["requires-python"] == ">=3.10"
     assert project["license"] == {"text": "MIT"}
     assert len(project["keywords"]) >= 5
@@ -34,7 +34,12 @@ def test_pep621_pyproject_metadata() -> None:
     assert "Homepage" in urls
     assert "Repository" in urls
     assert "Issues" in urls
+    assert "Documentation" in urls
     assert "Changelog" in urls
+    assert "Organization" in urls
+    assert "LLM Ready" in urls
+    assert "Security Policy" in urls
+    assert "Marketing Log" in urls
 
 
 def test_license_integrity() -> None:
@@ -57,6 +62,8 @@ def test_gitignore_hygiene() -> None:
     assert "*-conflict-*" in content
     assert "*-ASUS-GEI.*" in content
     assert "*-WORKSTATION-LG.*" in content
+    assert "*conflicted copy*" in content
+    assert "uv.lock" in content
     assert ".pytest_cache/" in content
     assert ".ruff_cache/" in content
     assert "__pycache__/" in content
@@ -64,7 +71,7 @@ def test_gitignore_hygiene() -> None:
 
 
 def test_ci_matrix_workflow() -> None:
-    """Verify GitHub Actions CI matrix covers multi-OS and Python 3.10-3.12."""
+    """Verify GitHub Actions CI matrix covers multi-OS, Python 3.10-3.12, and timeouts."""
     ci_path = REPO_ROOT / ".github" / "workflows" / "ci.yml"
     assert ci_path.is_file(), "CI workflow must exist"
     content = ci_path.read_text(encoding="utf-8")
@@ -74,17 +81,34 @@ def test_ci_matrix_workflow() -> None:
     assert '"3.10"' in content
     assert '"3.11"' in content
     assert '"3.12"' in content
+    assert "timeout-minutes: 15" in content
     assert "cancel-in-progress: true" in content
     assert "contents: read" in content
     assert "pytest -ra -v" in content
 
 
 def test_stale_workflow() -> None:
-    """Verify stale issue/PR lifecycle workflow exists."""
+    """Verify stale issue/PR lifecycle workflow exists with timeouts and permissions."""
     stale_path = REPO_ROOT / ".github" / "workflows" / "stale.yml"
     assert stale_path.is_file(), "stale workflow must exist"
     content = stale_path.read_text(encoding="utf-8")
     assert "actions/stale@v9" in content
+    assert "timeout-minutes: 10" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
+
+
+def test_welcome_workflow() -> None:
+    """Verify welcome workflow for first-time contributors exists with timeouts."""
+    welcome_path = REPO_ROOT / ".github" / "workflows" / "welcome.yml"
+    assert welcome_path.is_file(), "welcome workflow must exist"
+    content = welcome_path.read_text(encoding="utf-8")
+    assert "actions/first-interaction@v3" in content
+    assert "timeout-minutes: 5" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
 
 
 def test_readme_parity_and_banners() -> None:
@@ -110,13 +134,36 @@ def test_readme_parity_and_banners() -> None:
     assert "shields.io" in text_de
 
 
+def test_security_policy_structure() -> None:
+    """Verify SECURITY.md exists, specifies zero egress, and 48h SLA."""
+    sec_path = REPO_ROOT / "SECURITY.md"
+    assert sec_path.is_file(), "SECURITY.md must exist"
+    content = sec_path.read_text(encoding="utf-8")
+    assert "48 hours" in content or "48h" in content
+    assert "Zero Network Egress" in content
+    assert "Reporting a Vulnerability" in content
+
+
+def test_marketing_log_structure() -> None:
+    """Verify MARKETING-LOG.txt exists and documents value proposition and personas."""
+    mkt_path = REPO_ROOT / "MARKETING-LOG.txt"
+    assert mkt_path.is_file(), "MARKETING-LOG.txt must exist"
+    content = mkt_path.read_text(encoding="utf-8")
+    assert "Value Proposition" in content
+    assert "Target Audience" in content
+    assert "Discoverability & SEO-Keywords" in content
+    assert "ellmos-ai/bundles" in content
+
+
 def test_llms_txt_structure() -> None:
     """Verify llms.txt exists and has up-to-date metadata."""
     llms_path = REPO_ROOT / "llms.txt"
     assert llms_path.is_file(), "llms.txt must exist"
     content = llms_path.read_text(encoding="utf-8")
-    assert "## Last-checked: 2026-09-10" in content
+    assert "## Last-checked: 2026-09-14" in content
     assert "Canonical repository: https://github.com/ellmos-ai/bundles" in content
+    assert "SECURITY.md" in content
+    assert "MARKETING-LOG.txt" in content
 
 
 def test_changelog_structure() -> None:
@@ -124,6 +171,7 @@ def test_changelog_structure() -> None:
     changelog_path = REPO_ROOT / "CHANGELOG.md"
     assert changelog_path.is_file(), "CHANGELOG.md must exist"
     content = changelog_path.read_text(encoding="utf-8")
+    assert "## [1.0.2] - 2026-09-14" in content
     assert "## [1.0.1] - 2026-09-10" in content
     assert "## [1.0.0] - 2026-08-08" in content
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ellmos-bundles"
-version = "1.0.0"
+version = "1.0.2"
 description = "The recipe layer of the ellmos ecosystem: bundle manifests, catalogues, and composition knowledge"
 readme = "README.md"
 license = { text = "MIT" }
@@ -46,8 +46,12 @@ dev = [
 Homepage = "https://github.com/ellmos-ai/bundles"
 Repository = "https://github.com/ellmos-ai/bundles.git"
 Issues = "https://github.com/ellmos-ai/bundles/issues"
+Documentation = "https://github.com/ellmos-ai/bundles#readme"
 Changelog = "https://github.com/ellmos-ai/bundles/blob/main/CHANGELOG.md"
 Organization = "https://github.com/ellmos-ai"
+"LLM Ready" = "https://github.com/ellmos-ai/bundles/blob/main/llms.txt"
+"Security Policy" = "https://github.com/ellmos-ai/bundles/blob/main/SECURITY.md"
+"Marketing Log" = "https://github.com/ellmos-ai/bundles/blob/main/MARKETING-LOG.txt"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,0 +1,70 @@
+# MARKETING-LOG — BUNDLES (ellmos Ecosystem Recipe Layer)
+# Stand: 2026-09-14 | Repository: ellmos-ai/bundles | Lizenz: MIT
+
+## 1. Positionierung & Kernnutzen (Value Proposition)
+
+`bundles` bildet die deklarative Rezeptur-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompositionswissen.
+Es löst das Kernproblem modularer Multi-Agenten-Systeme:
+Das blosse Vorhandensein von Komponenten (Repositories, Skills, Agenten-Rollen) konstituiert noch kein funktionierendes System.
+
+Ein Bundle-Manifest ist eine **Rezeptur = Seed + Zutatenliste**:
+- **Zutatenliste**: Alle referenzierten Komponenten sind öffentlich und eigenständig auffindbar.
+- **Seed**: Die architektonische Kompositionslogik (welche Teile zusammenpassen, welche Rolle jede Komponente übernimmt, welche Alternativen abgewogen wurden und in welcher Reihenfolge aufgebaut wird).
+
+Kernmerkmale:
+- **Deklarative Manifeste**: Strukturierte JSON-Manifeste mit Schema-Validierung (`ellmos.bundle.v1`, `ellmos.bundles.catalog.v1`).
+- **Kanonische Integrität**: 17 Manifest- und Vertrags-Artefakte mit bitgenauer SHA-256 `content_hash`-Verifikation.
+- **Reproduzierbarer Export**: Werkzeug `tools/export_from_source.py` zur deterministischen Projektion aus dem privaten Quell-Repository.
+- **Design System & Banner**: Einheitliches Visual Design System mit `tools/generate_banner.py`, Design-Tokens und 100% konsistenten Headern.
+- **Zero-Network-Egress & Local-First**: 100% offline ausführbar, null Telemetrie, keine Cloud-Abhängigkeiten.
+
+---
+
+## 2. Ziel-Personas (Target Audience)
+
+1. **Multi-Agent Ecosystem Architects & Swarm Builders**
+   - Entwickler und Architekten, die komplexe Multi-Agenten-Umgebungen planen und wissen müssen, welche Bausteine kohärent zusammenspielen.
+   - Profitieren von erprobten Bündelungen über Speicher (Working Memory, Durable Memory), Steuerung (Agents, Coordination Choice) und Domänen-Assistenten.
+
+2. **Modular Tool & Skill Developers**
+   - Autoren von Werkzeugen und Plugins, die ihre Komponenten in bestehende funktionale Ringe einordnen möchten.
+   - Nutzen die deklarativen Verträge (`bundle-family-contract.v1.json`, `choice-bundle-contract.v1.json`) als Kompatibilitätsrichtlinie.
+
+3. **Privacy-Conscious & Local-First System Engineers**
+   - Teams mit strikten Air-Gapped- oder Datenschutz-Anforderungen, die nachvollziehbare, unveränderliche Manifeste mit kryptographischen Prüfsummen verlangen.
+   - Profitieren vom garantierten Zero-Egress und unprivilegierter Ausführung (`RunAsInvoker`).
+
+4. **Open-Source AI Researchers & Knowledge Engineers**
+   - Wissenschaftler und Forscher, die Kompositionsmuster in Agenten-Netzwerken analysieren und reproduzierbare Rezepte für Experimente benötigen.
+
+---
+
+## 3. Discoverability & SEO-Keywords
+
+`ellmos`, `bundles`, `manifests`, `composition-knowledge`, `agent-recipes`, `multi-agent`,
+`ai-architecture`, `local-first`, `zero-egress`, `declarative-contracts`, `mit-license`,
+`working-memory`, `human-context`, `coordination-choice`, `knowledge-bundle`, `open-ocean`
+
+---
+
+## 4. Verzeichnis- & Katalog-Empfehlungen (Directory Submissions)
+
+| Verzeichnis / Liste | Kategorie | Begründung / Relevanz |
+|---|---|---|
+| **Awesome-AI-Agents** (`e2b-dev/awesome-ai-agents`) | Agent Architectures / Frameworks | Rezeptur-Schicht zur strukturierten Komposition von Multi-Agenten-Systemen. |
+| **Awesome-Local-AI** | Local Infrastructure | Zeigt deklarative Komposition ohne Cloud-Zwang mit kryptographischer Integrität. |
+| **Awesome-Multi-Agent** | Agent Orchestration / Design Patterns | Liefert Referenz-Architekturen für modulare Agenten-Ökosysteme. |
+| **Open Bricks Registry** | Ecosystem Packages | Zentrale Einordnung als Rezeptur- und Manifest-Quelle aller Software-Produkte. |
+
+---
+
+## 5. Audit- & Wartungshistorie
+
+- **2026-09-14 (Pfad A — Repository Hygiene & CI Matrix Härtung)**:
+  - CI-Matrix Workflow (`.github/workflows/ci.yml`) mit `timeout-minutes: 15` gehärtet.
+  - Stale Automation (`.github/workflows/stale.yml`) mit `timeout-minutes: 10` und Concurrency gehärtet.
+  - Welcome Workflow (`.github/workflows/welcome.yml`) für Erstbeitragende ergänzt.
+  - `.gitignore` gegen Multi-Host Synchronisationskollisionen und Locks gehärtet.
+  - `SECURITY.md` Sicherheitsrichtlinie mit 48h-SLA und Zero-Egress-Garantie etabliert.
+  - `pyproject.toml` PEP 621 URLs standardisiert, Version auf 1.0.2 harmonisiert.
+  - Vertragstests in `tests/test_repository_hygiene.py` auf 13 Prüfungen erweitert (19/19 Tests bestanden | 100% grün).

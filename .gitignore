@@ -9,13 +9,30 @@ LOCK.*
 LOCK.txt
 LOCK.*.txt
 LOCK.permissions.json
+uv.lock
+!package-lock.json
+*.orig
 
 # Multi-Host Sync Conflicts
 *-conflict-*
-*-ASUS-GEI.*
+* (kopie)*
+* (copy)*
+* (Kopie)*
+* (Copy)*
+*conflicted copy*
+*-WORKSTATION*
+*-WORKSTATION-LG*
 *-WORKSTATION-LG.*
+*-ASUS*
+*-ASUS-GEI*
+*-ASUS-GEI.*
+*-LAPTOP*
+*-Mac Studio*
+*.sync-temp-*
+*.sync-conflict-*
+*.conflict
 
-# Python caches and bytecode
+# Python caches, test and bytecode
 __pycache__/
 *.py[cod]
 *$py.class
@@ -23,7 +40,13 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .coverage
+.coverage.*
 htmlcov/
+.tox/
+.turbo/
+.hypothesis/
+wheelhouse/
+.wheel-smoke/
 
 # Environments
 .venv/

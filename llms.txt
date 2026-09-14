@@ -1,4 +1,4 @@
-## Last-checked: 2026-09-10
+## Last-checked: 2026-09-14
 
 # bundles
 
@@ -48,6 +48,8 @@ Markdown, SVG, PNG and Python files do not make that field-level guarantee.
 - `docs/bundles/<bundle-id>.md` — one page per bundle, in German.
 - `tools/export_from_source.py` — the reproducible projection tool.
 - `tools/generate_banner.py` — the banner generator (frozen design system).
+- `SECURITY.md` — security policy, zero-egress guarantees, and 48-hour response SLA.
+- `MARKETING-LOG.txt` — personas, discoverability keywords, and ecosystem positioning.
 
 ## Search Phrases
 

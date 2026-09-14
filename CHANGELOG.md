@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-09-14
+
+### Added
+- **CI Hardening**: Added `timeout-minutes: 15` and concurrency cancel-in-progress to `.github/workflows/ci.yml`.
+- **Stale Automation Hardening**: Added `timeout-minutes: 10` and concurrency cancel-in-progress to `.github/workflows/stale.yml`.
+- **Welcome Contributor Workflow**: Added `.github/workflows/welcome.yml` with `actions/first-interaction@v3` (timeout-minutes: 5, least-privilege permissions).
+- **Security Policy**: Added `SECURITY.md` establishing local-first zero-network-egress guarantees, declarative manifest integrity, and 48h vulnerability response SLA.
+- **Discoverability & Marketing Log**: Added `MARKETING-LOG.txt` defining value proposition, target personas, SEO queries, and ecosystem positioning.
+- **Extended Contract Tests**: Added new tests in `tests/test_repository_hygiene.py` validating CI timeouts, welcome workflow, security policy SLA, marketing log, and multi-host lock exclusions.
+
+### Changed
+- **Gitignore Hardening**: Expanded `.gitignore` with comprehensive multi-host cloud-sync conflict masks (`* (kopie)*`, `* (copy)*`, `*conflicted copy*`, `*-ASUS*`, `*-WORKSTATION*`, `*.sync-conflict-*`), multi-agent locks (`LOCK`, `LOCK.*`, `*.lock`, `uv.lock`), and coverage/test caches.
+- **PEP 621 Standardisation**: Harmonized `pyproject.toml` version to `1.0.2`, added URLs (`Documentation`, `LLM Ready`, `Security Policy`, `Marketing Log`), and standardized pytest `addopts`.
+- **LLM Context Refresh**: Updated `llms.txt` verification timestamp to 2026-09-14 and indexed security policy and marketing log.
+
 ## [1.0.1] - 2026-09-10
 
 ### Added
