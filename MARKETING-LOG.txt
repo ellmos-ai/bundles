@@ -68,3 +68,10 @@ Kernmerkmale:
   - `SECURITY.md` Sicherheitsrichtlinie mit 48h-SLA und Zero-Egress-Garantie etabliert.
   - `pyproject.toml` PEP 621 URLs standardisiert, Version auf 1.0.2 harmonisiert.
   - Vertragstests in `tests/test_repository_hygiene.py` auf 13 Prüfungen erweitert (19/19 Tests bestanden | 100% grün).
+- **2026-09-19 (Pfad B — Discoverability, Bilingual Composition Sequence & Quality Badges)**:
+  - Zweisprachige Sequenzdiagramme (`sequenceDiagram`) für Kompositions-Lebenszyklus und Laufzeit-Ausführung in `README.md` und `README_de.md` ergänzt.
+  - Shields.io Badges für Code-Stil (`ruff`) und Teststatus (`pytest`) integriert (100% Parität DE/EN).
+  - Vierstufige Ausführungsphasen (Discovery & Verification, Capability Graph Construction, Choice & Constraint Resolution, Runtime Activation) im README dokumentiert.
+  - Version auf 1.0.3 angehoben.
+  - Empfehlungen für manuelle Verzeichnis-Submissions (Awesome-AI-Agents, Awesome-Local-AI) aktualisiert.
+  - Mermaid-Syntax durch `lint_mermaid.py` auf GitHub-Kompatibilität geprüft (0 Syntax-Probleme).

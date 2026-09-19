@@ -6,6 +6,8 @@ Die Rezept-Schicht des ellmos-Ökosystems: Bundle-Manifeste, Kataloge und Kompos
 
 [![CI](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml/badge.svg)](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Code-Stil: ruff](https://img.shields.io/badge/Code--Stil-ruff-000000.svg)](https://github.com/astral-sh/ruff)
+[![Tests: pytest](https://img.shields.io/badge/Tests-pytest-blue.svg)](tests)
 [![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-green.svg)](LICENSE)
 [![Bundles: 13](https://img.shields.io/badge/Bundles-13%20Manifeste-informational.svg)](manifests/bundles.catalog.v1.json)
 [![Schema: v1](https://img.shields.io/badge/Schema-ellmos.bundle.v1-blueviolet.svg)](contracts/bundle-family-contract.v1.json)
@@ -100,6 +102,37 @@ wertvoll macht — solche warten lieber, statt beschnitten zu erscheinen.
 | `pillar` | die Familie: memory hält Zustand, control steuert ihn, uas bedient die Person, domain trägt Fachlichkeit |
 | `class` | `platform`, `domain` und `hosted-private` sind funktional; `choice` ist ein Auswahlregister; `synthetic` expandiert auf seine Mitglieder |
 | `content_hash` | über das Manifest ohne dieses Feld — dadurch an Ort und Stelle prüfbar |
+
+## Kompositions-Lebenszyklus und Laufzeit-Ausführung
+
+Ein Bundle-Manifest wird von einer Agenten-Laufzeit (wie `open-ocean` oder einem Agenten-CLI) über einen deterministischen, vierstufigen Kompositionsprozess ausgeführt:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Entwickler as Entwickler / Agenten-CLI
+    participant Katalog as Manifest-Katalog
+    participant Manifest as Bundle-Manifest
+    participant Graph as Faehigkeiten-Resolver
+    participant Laufzeit as Agenten-Laufzeit (open-ocean)
+
+    Entwickler ->> Katalog: Bundle anfordern (z. B. ellmos-working-memory-bundle)
+    Katalog -->> Entwickler: Manifest-Referenz und Schema (v1) bereitstellen
+    Entwickler ->> Manifest: JSON-Manifest laden und content_hash validieren
+    Manifest -->> Entwickler: Komponentendefinitionen, Rollen und Auswahllogik
+    Entwickler ->> Graph: Faehigkeiten-Graph aufbauen (provides / consumes)
+    Graph ->> Graph: Benoetigte Faehigkeiten zuordnen und Auswahlgruppen aufloesen
+    Graph -->> Laufzeit: Kompositionsgraph uebergeben
+    Laufzeit ->> Laufzeit: Module, Skills und Zugangsflaechen instanziieren
+    Laufzeit -->> Entwickler: Arbeitsfaehige Agenteneinheit einsatzbereit
+```
+
+### Ausführungsphasen
+
+1. **Auffinden & Verifikation**: Der Aufrufer fragt `manifests/bundles.catalog.v1.json` an, liest das Ziel-Bundle-Manifest ein und verifiziert dessen kryptographischen `content_hash` gegen die deklarierten Schema-Vorgaben (`ellmos.bundle.v1`).
+2. **Fähigkeiten-Graph-Konstruktion**: Der Resolver erfasst alle Komponenteneinträge (`modules`, `skills`, `access surfaces`, `software apps`) und erstellt einen gerichteten azyklischen Graphen aus `provides`- und `consumes`-Abhängigkeiten.
+3. **Auswahl- & Constraint-Auflösung**: Bei vorhandenen `choice_groups` bestimmt der Resolver die am besten passende konkrete Komponente anhand der Umgebungsbedingungen und Host-Berechtigungen.
+4. **Laufzeit-Aktivierung**: Der Aufrufer oder die konsumierende Laufzeit (`open-ocean`) instanziiert die aufgelösten Komponenten in topologischer Reihenfolge und bindet Schnittstellen sowie Zugangsflächen an.
 
 ## Status: die Ampel
 

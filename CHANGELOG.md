@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-09-19
+
+### Added
+- **Composition Lifecycle Sequence Diagrams**: Added bilingual Mermaid `sequenceDiagram` to `README.md` and `README_de.md` detailing the 4-stage runtime execution flow (Discovery & Verification, Capability Graph Construction, Choice & Constraint Resolution, Runtime Activation).
+- **Code Style & Test Badges**: Added Shields.io badges for Ruff code style and Pytest test suite status to both README files.
+- **Mermaid Guardrail Contract Test**: Added contract test in `tests/test_repository_hygiene.py` validating Mermaid syntax integrity and presence of lifecycle sequence diagrams.
+
+### Changed
+- **Version Bump**: Bumped version to 1.0.3 in `pyproject.toml` and test assertions.
+- **LLM Context & Marketing Audit**: Updated `llms.txt` check timestamp to 2026-09-19 and added Pfad B audit history in `MARKETING-LOG.txt`.
+
 ## [1.0.2] - 2026-09-14
 
 ### Added

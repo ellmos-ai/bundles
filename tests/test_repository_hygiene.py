@@ -18,7 +18,7 @@ def test_pep621_pyproject_metadata() -> None:
     project = data["project"]
 
     assert project["name"] == "ellmos-bundles"
-    assert project["version"] == "1.0.2"
+    assert project["version"] == "1.0.3"
     assert project["requires-python"] == ">=3.10"
     assert project["license"] == {"text": "MIT"}
     assert len(project["keywords"]) >= 5
@@ -160,7 +160,7 @@ def test_llms_txt_structure() -> None:
     llms_path = REPO_ROOT / "llms.txt"
     assert llms_path.is_file(), "llms.txt must exist"
     content = llms_path.read_text(encoding="utf-8")
-    assert "## Last-checked: 2026-09-14" in content
+    assert "## Last-checked: 2026-09-19" in content
     assert "Canonical repository: https://github.com/ellmos-ai/bundles" in content
     assert "SECURITY.md" in content
     assert "MARKETING-LOG.txt" in content
@@ -171,9 +171,28 @@ def test_changelog_structure() -> None:
     changelog_path = REPO_ROOT / "CHANGELOG.md"
     assert changelog_path.is_file(), "CHANGELOG.md must exist"
     content = changelog_path.read_text(encoding="utf-8")
+    assert "## [1.0.3] - 2026-09-19" in content
     assert "## [1.0.2] - 2026-09-14" in content
     assert "## [1.0.1] - 2026-09-10" in content
     assert "## [1.0.0] - 2026-08-08" in content
+
+
+def test_mermaid_diagram_and_badge_parity() -> None:
+    """Verify README.md and README_de.md contain sequence diagrams and badges."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    # Sequence diagrams present
+    assert "sequenceDiagram" in readme_en
+    assert "sequenceDiagram" in readme_de
+    assert "open-ocean" in readme_en
+    assert "open-ocean" in readme_de
+
+    # Ruff and Pytest badges present
+    assert "badge/code%20style-ruff-000000.svg" in readme_en
+    assert "badge/Code--Stil-ruff-000000.svg" in readme_de
+    assert "badge/tests-pytest-blue.svg" in readme_en
+    assert "badge/Tests-pytest-blue.svg" in readme_de
 
 
 def test_python_syntax_clean() -> None:

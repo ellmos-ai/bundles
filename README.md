@@ -7,6 +7,8 @@ knowledge.
 
 [![CI](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml/badge.svg)](https://github.com/ellmos-ai/bundles/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
+[![Tests: pytest](https://img.shields.io/badge/tests-pytest-blue.svg)](tests)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Bundles: 13](https://img.shields.io/badge/bundles-13%20manifests-informational.svg)](manifests/bundles.catalog.v1.json)
 [![Schema: v1](https://img.shields.io/badge/schema-ellmos.bundle.v1-blueviolet.svg)](contracts/bundle-family-contract.v1.json)
@@ -98,6 +100,37 @@ having, so those wait rather than ship diminished.
 | `pillar` | the family: memory keeps state, control steers it, uas serves the person, domain carries subject matter |
 | `class` | `platform`, `domain` and `hosted-private` are functional; `choice` is a selection register; `synthetic` expands to its members |
 | `content_hash` | over the manifest without the field itself, so it can be verified in place |
+
+## Composition lifecycle & runtime execution
+
+A bundle manifest is executed by an agent runtime (such as `open-ocean` or an agent CLI) through a deterministic, four-stage composition process:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Developer as Developer / Agent CLI
+    participant Catalog as Manifest Catalog
+    participant Manifest as Bundle Manifest
+    participant Graph as Capability Resolver
+    participant Runtime as Agent Runtime (open-ocean)
+
+    Developer ->> Catalog: Request bundle (e.g. ellmos-working-memory-bundle)
+    Catalog -->> Developer: Return manifest reference and schema (v1)
+    Developer ->> Manifest: Load JSON manifest and verify content_hash
+    Manifest -->> Developer: Component definitions, roles, and choice groups
+    Developer ->> Graph: Build capability graph (provides / consumes)
+    Graph ->> Graph: Match required capabilities and resolve choice groups
+    Graph -->> Runtime: Composition graph ready
+    Runtime ->> Runtime: Instantiate modules, skills, and access surfaces
+    Runtime -->> Developer: Working agent unit initialized
+```
+
+### Execution phases
+
+1. **Discovery & Verification**: The caller queries `manifests/bundles.catalog.v1.json`, retrieves the target bundle manifest, and validates its cryptographic `content_hash` against the declared schema specifications (`ellmos.bundle.v1`).
+2. **Capability Graph Construction**: The resolver maps all component entries (`modules`, `skills`, `access surfaces`, `software apps`) and builds a directed acyclic graph of `provides` and `consumes` dependencies.
+3. **Choice & Constraint Resolution**: Where `choice_groups` exist, the resolver selects the best-fitting concrete component according to environment constraints and available host permissions.
+4. **Runtime Activation**: The caller or consuming runtime (`open-ocean`) instantiates the resolved components in topological order, binding APIs and user surfaces to form a cohesive agent swarm.
 
 ## Status: the traffic light
 
