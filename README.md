@@ -1,4 +1,5 @@
 <img src="assets/banner.png" width="100%" alt="bundles Banner">
+<!-- alternate banner: assets/banner-b.png (swap on occasion) -->
 
 # bundles
 
