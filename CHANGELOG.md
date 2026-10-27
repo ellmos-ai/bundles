@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Offline standard-library public projection gate for JSON, canonical hashes, catalog and contract pins, receipt targets, banners and embedded previews, with drift fixtures and bilingual usage documentation.
+
+### Changed
+- Run the public gate before dependency installation in CI; pin checkout/setup-python to verified full commit SHAs and disable persisted checkout credentials.
+
 ## [1.0.3] - 2026-09-19
 
 ### Added

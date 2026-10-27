@@ -203,6 +203,40 @@ Zwei Eigenschaften machen das Ergebnis prüfbar statt bloß behauptet:
 python tools/export_from_source.py --source <pfad-zur-quelle> --check
 ```
 
+### Öffentliche Projektion offline prüfen
+
+In einem Checkout genügt Python 3.10+; Installation, Netzwerkzugriff und private
+Quelle sind nicht erforderlich:
+
+```bash
+python -I -S tools/validate_projection.py
+```
+
+Dieses rein lesende Gate parst alle 18 öffentlichen JSON-Dokumente und prüft die 17
+deklarierten kanonischen SHA-256-Hashes: UTF-8-JSON, sortierte Schlüssel, kompakte
+Trennzeichen und nur das eigene `content_hash` des Dokuments entfernt. Verschachtelte
+Hashes bleiben Referenz-Pins. Es prüft die 13 Katalogeinträge gegen Manifestpfade, IDs
+und Hashes, öffentliche Contract- und Choice-Bundle-Pins sowie die 16 eindeutigen
+öffentlichen Receipt-Ziele. Zielpfade müssen im Checkout bleiben, auch nach Auflösung
+symbolischer Links.
+
+Außerdem prüft es alle 13 SVG-Banner und eingebetteten Vorschauen gegen den
+eingefrorenen Generator, mit den drei katalogbelegten Säulen-/Chip-Ausnahmen aus
+[`assets/design/README.md`](assets/design/README.md). Fehlende Säulenbelege führen zum
+Fehler; das Gate weist keine neue Säule zu und ändert kein Asset. Fehler nennen die
+relative Datei und verletzte Invariante und liefern einen Exitcode ungleich null.
+Die unveränderte freigegebene Projektion liefert null. CI führt denselben Befehl bei
+Pull Requests und Pushes auf `main`/`master` vor der Installation von Testabhängigkeiten
+aus; ihre Actions sind auf vollständige Commit-SHAs gepinnt.
+
+Die `source_sha256`-Felder im Receipt hashen private Originalbytes, keine Exportbytes.
+Das Gate prüft ihr Format und die öffentlichen Ziele, ohne `source_path` oder den
+privaten Exportvertrag aufzulösen. Es belegt öffentliche interne Konsistenz und
+reproduzierbare Banner; Quellauthentizität, vollständige Bereinigung und private
+Kompositionssemantik bleiben den Quellprüfungen vorbehalten. Der feste Bestand von
+18/13/16 erfasst diese freigegebene Projektion und erlaubt keine Veröffentlichung
+weiterer Rezepte.
+
 ## Banner & Seiten
 
 **Status: Die Serie steht.** Alle 13 Bundles haben einen Banner, eine deutsche Seite und eine
