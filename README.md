@@ -199,6 +199,37 @@ Two properties make the result checkable rather than merely asserted:
 python tools/export_from_source.py --source <path-to-source> --check
 ```
 
+### Check the public projection offline
+
+From a checkout, Python 3.10+ is enough; no installation, network access or private
+source is needed:
+
+```bash
+python -I -S tools/validate_projection.py
+```
+
+This read-only gate parses all 18 public JSON documents and verifies the 17 declared
+canonical SHA-256 hashes: UTF-8 JSON, sorted keys, compact separators, and only the
+document's own `content_hash` removed. Nested hashes remain reference pins. It checks
+the 13 catalog entries against manifest paths, IDs and hashes, public contract and
+choice-bundle pins, and the receipt's 16 unique public targets. Target paths must stay
+inside the checkout, including resolved symbolic links.
+
+It also checks all 13 SVG banners and embedded previews against the frozen renderer,
+with the three catalog-backed pillar/chip exceptions described in
+[`assets/design/README.md`](assets/design/README.md). Missing pillar evidence fails;
+the gate never assigns a new pillar or changes an asset. Errors name the relative
+file and violated invariant and exit nonzero. The unchanged released projection exits
+zero. CI runs this same command on pull requests and pushes to `main`/`master`, before
+installing test dependencies; its actions are pinned to full commit SHAs.
+
+The receipt's `source_sha256` fields hash private original bytes, not exported bytes.
+The gate checks their format and the public targets, without resolving `source_path`
+or the private export contract. It proves public internal consistency and banner
+reproducibility; source authenticity, redaction completeness and private composition
+semantics remain with the source checks. The fixed 18/13/16 inventory covers this
+released projection and grants no authority to publish further recipes.
+
 ## Banners and pages
 
 **Status: the series is complete.** All 13 bundles have a banner, a page in German and a
